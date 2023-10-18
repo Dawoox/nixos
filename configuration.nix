@@ -4,7 +4,8 @@
 
 { config, pkgs, ... }:
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  unstable = import (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/master) { config = config.nixpkgs.config; };
 in
 {
   imports =
@@ -16,7 +17,7 @@ in
   # Home manager
   home-manager.users.dawoox = {
     /* The home.stateVersion option does not have a default and must be set */
-    home.stateVersion = "23.05";
+    home.stateVersion = "23.11";
     programs.git = {
       enable = true;
       userName  = "Antoine";
@@ -43,6 +44,13 @@ in
       sessionVariables = {
         NIXPKGS_ALLOW_UNFREE = "1";
       };
+    };
+    programs.eza = {
+      package = unstable.eza;
+      enable = true;
+      enableAliases = true;
+      git = true;
+      icons = true;
     };
   };
 
@@ -97,7 +105,7 @@ in
     shell = pkgs.zsh;
   };
 
-  # Enable pkgs
+  # Enable zsh
   programs.zsh.enable = true;
 
   # Allow unfree packages
@@ -110,6 +118,7 @@ in
     wget
     git
     emacs
+    unstable.eza
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -137,6 +146,6 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "unstable"; # Did you read the comment?
 
 }
