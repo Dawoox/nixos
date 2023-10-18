@@ -23,6 +23,7 @@ in
       userEmail = "me@antoinebellanger.fr";
       extraConfig = {
         init.defaultBranch = "main";
+        "url \"ssh://git@github.com/\"".insteadOf = "https://github.com/";
       };
     };
   };
