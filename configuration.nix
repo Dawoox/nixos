@@ -15,7 +15,7 @@ in
 
   # Home manager
   home-manager.users.dawoox = {
-        /* The home.stateVersion option does not have a default and must be set */
+    /* The home.stateVersion option does not have a default and must be set */
     home.stateVersion = "23.05";
     programs.git = {
       enable = true;
@@ -24,6 +24,24 @@ in
       extraConfig = {
         init.defaultBranch = "main";
         "url \"ssh://git@github.com/\"".insteadOf = "https://github.com/";
+      };
+    };
+    programs.emacs = {
+      enable = true;
+      package = pkgs.emacs;
+      extraConfig = ''
+        (global-font-lock-mode 0)
+        (setq column-number-mode t)
+      '';
+    };
+    programs.zsh = {
+      enable = true;
+      oh-my-zsh = {
+        enable = true;
+        theme = "robbyrussell";
+      };
+      sessionVariables = {
+        NIXPKGS_ALLOW_UNFREE = "1";
       };
     };
   };
@@ -76,7 +94,11 @@ in
     description = "Antoine";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
+
+  # Enable pkgs
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -85,8 +107,9 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-     git
+    wget
+    git
+    emacs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
