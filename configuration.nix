@@ -96,6 +96,7 @@ in
         ".config/hypr/hyprland.conf".source = ./dotFiles/hyprland.conf;
         ".config/hypr/hyprpaper.conf".source = ./dotFiles/hyprpaper.conf;
         ".config/wofi/style.css".source = "${wofi_dracula}/style.css";
+        ".config/waybar/config".source = ./dotFiles/waybar;
         "assets/wallpaper.jpg".source = ./assets/wallpaper.jpg;
         "assets/lock.jpg".source = ./assets/lock.jpg;
         "scripts".source = ./scripts;
@@ -222,6 +223,7 @@ in
     kitty
     brightnessctl
     swaylock
+    pamixer
   ];
 
   # Enable PAM config (needed for swaylock)
