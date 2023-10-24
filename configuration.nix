@@ -85,6 +85,12 @@ in
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
+    programs.eza = {
+      enable = true;
+      enableAliases = true;
+      git = true;
+      icons = true;
+    };
     home = {
       file = {
         ".config/hypr/hyprland.conf".source = ./dotFiles/hyprland.conf;
