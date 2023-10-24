@@ -30,6 +30,32 @@ in
   home-manager.users.dawoox = {
     /* The home.stateVersion option does not have a default and must be set */
     home.stateVersion = "23.11";
+    programs.kitty = {
+      enable = true;
+      font = {
+        package = (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; });
+        name = "JetBrainsMono Nerd Font";
+        size = 12;
+      };
+      shellIntegration = {
+        enableZshIntegration = true;
+      };
+      theme = "Catppuccin-Mocha";
+      settings = {
+        hide_window_decorations = "no";
+        background_opacity = "0.70";
+        dynamic_background_opacity = "yes";
+        window_padding_width = "0.0";
+        remember_window_size = "no";
+        
+        # Tabs
+        tab_bar_min_tabs = "2";
+        tab_bar_edge = "bottom";
+        tab_bar_style = "powerline";
+        tab_powerline_style = "slanted";
+        tab_title_template = "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}";
+      };
+    };
     programs.git = {
       enable = true;
       userName  = "Antoine";
@@ -49,7 +75,10 @@ in
       sessionVariables = {
         NIXPKGS_ALLOW_UNFREE = "1";
       };
-      initExtra = "eval \"$(direnv hook zsh)\"";
+      initExtra = ''
+        eval "$(direnv hook zsh)"
+        alias lock="~/scripts/lock_custom.sh"
+      '';
     };
     programs.direnv = {
       enable = true;
@@ -62,6 +91,8 @@ in
         ".config/hypr/hyprpaper.conf".source = ./dotFiles/hyprpaper.conf;
         ".config/wofi/style.css".source = "${wofi_dracula}/style.css";
         "assets/wallpaper.jpg".source = ./assets/wallpaper.jpg;
+        "assets/lock.jpg".source = ./assets/lock.jpg;
+        "scripts".source = ./scripts;
       };
     };
   };
@@ -82,6 +113,9 @@ in
     enable = true;
     theme = "${sddm_catppuccin}/src/catppuccin-macchiato";
   };
+
+  # Disable systemd-logind handling of the lid switch
+  services.logind.lidSwitch = "ignore";
 
   # Hyprland
   programs.hyprland.enable = true;
@@ -110,8 +144,12 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # Enable TLP Battery Manager
+  services.tlp.enable = true;
+
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = false;
+  services.power-profiles-daemon.enable = false;
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
@@ -157,6 +195,7 @@ in
       wofi
       discord
       hyprpaper
+      waybar
     ];
     shell = pkgs.zsh;
   };
@@ -175,7 +214,12 @@ in
     tree
     vim
     kitty
+    brightnessctl
+    swaylock
   ];
+
+  # Enable PAM config (needed for swaylock)
+  security.pam.services.swaylock = {};
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
