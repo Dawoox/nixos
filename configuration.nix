@@ -4,7 +4,20 @@
 
 { config, pkgs, ... }:
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  sddm_catppuccin = pkgs.fetchFromGitHub {
+    owner = "catppuccin";
+    repo = "sddm";
+    rev = "7fc67d1027cdb7f4d833c5d23a8c34a0029b0661";
+    hash = "sha256-SjYwyUvvx/ageqVH5MmYmHNRKNvvnF3DYMJ/f2/L+Go=";
+  };
+  wofi_dracula = pkgs.fetchFromGitHub {
+    owner = "dracula";
+    repo = "wofi";
+    rev = "9180ba3ddda7d339293e8a1bf6a67b5ce37fdd6e";
+    hash = "sha256-qC1IvVJv1AmnGKm+bXadSgbc6MnrTzyUxGH2ogBOHQA=";
+    #sha256 = pkgs.lib.fakeSha256;
+  };
 in
 {
   imports =
@@ -12,11 +25,11 @@ in
       ./hardware-configuration.nix
       (import "${home-manager}/nixos")
     ];
-
+  
   # Home manager
   home-manager.users.dawoox = {
     /* The home.stateVersion option does not have a default and must be set */
-    home.stateVersion = "23.05";
+    home.stateVersion = "23.11";
     programs.git = {
       enable = true;
       userName  = "Antoine";
@@ -25,14 +38,6 @@ in
         init.defaultBranch = "main";
         "url \"ssh://git@github.com/\"".insteadOf = "https://github.com/";
       };
-    };
-    programs.emacs = {
-      enable = true;
-      package = pkgs.emacs;
-      extraConfig = ''
-        (global-font-lock-mode 0)
-        (setq column-number-mode t)
-      '';
     };
     programs.zsh = {
       enable = true;
@@ -44,18 +49,35 @@ in
         NIXPKGS_ALLOW_UNFREE = "1";
       };
     };
+    home = {
+      file = {
+        ".config/hypr/hyprland.conf".source = ./dotFiles/hyprland.conf;
+        ".config/hypr/hyprpaper.conf".source = ./dotFiles/hyprpaper.conf;
+        ".config/wofi/style.css".source = "${wofi_dracula}/style.css";
+        "assets/wallpaper.jpg".source = ./assets/wallpaper.jpg;
+      };
+    };
   };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "laptop-antoine"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # SDDM
+  services.xserver.displayManager.sddm = {
+    enable = true;
+    theme = "${sddm_catppuccin}/src/catppuccin-macchiato";
+  };
+
+  # Hyprland
+  programs.hyprland.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -82,7 +104,7 @@ in
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.enable = false;
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
@@ -120,15 +142,19 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dawoox = {
     isNormalUser = true;
+    initialPassword = "hello";
     description = "Antoine";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       vivaldi
+      wofi
+      discord
+      hyprpaper
     ];
     shell = pkgs.zsh;
   };
 
-  # Enable pkgs
+  # Enable zsh
   programs.zsh.enable = true;
 
   # Allow unfree packages
@@ -137,10 +163,11 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
-    emacs
+    tree
+    vim
+    kitty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -154,7 +181,7 @@ in
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -168,6 +195,6 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
