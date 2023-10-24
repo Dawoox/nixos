@@ -37,6 +37,7 @@ in
       extraConfig = {
         init.defaultBranch = "main";
         "url \"ssh://git@github.com/\"".insteadOf = "https://github.com/";
+        core.excludesFile = "~/.globalgitignore";
       };
     };
     programs.zsh = {
@@ -48,6 +49,12 @@ in
       sessionVariables = {
         NIXPKGS_ALLOW_UNFREE = "1";
       };
+      initExtra = "eval \"$(direnv hook zsh)\"";
+    };
+    programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
     };
     home = {
       file = {
