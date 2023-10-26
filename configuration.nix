@@ -97,6 +97,7 @@ in
         ".config/hypr/hyprpaper.conf".source = ./dotFiles/hyprpaper.conf;
         ".config/wofi/style.css".source = "${wofi_dracula}/style.css";
         ".config/waybar/config".source = ./dotFiles/waybar;
+        ".config/waybar/style.css".source = ./dotFiles/waybar.css;
         "assets/wallpaper.jpg".source = ./assets/wallpaper.jpg;
         "assets/lock.jpg".source = ./assets/lock.jpg;
         "scripts".source = ./scripts;
@@ -123,6 +124,9 @@ in
 
   # Disable systemd-logind handling of the lid switch
   services.logind.lidSwitch = "ignore";
+
+  # Enable steam
+  programs.steam.enable = true;
 
   # Hyprland
   programs.hyprland.enable = true;
@@ -224,6 +228,8 @@ in
     brightnessctl
     swaylock
     pamixer
+    xdg-desktop-portal-hyprland
+    wireguard-tools
   ];
 
   # Enable PAM config (needed for swaylock)
@@ -243,8 +249,8 @@ in
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 6567 ];
+  networking.firewall.allowedUDPPorts = [ 6567 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
