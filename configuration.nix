@@ -207,6 +207,7 @@ in
       discord
       hyprpaper
       waybar
+      mako
     ];
     shell = pkgs.zsh;
   };
