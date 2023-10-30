@@ -134,7 +134,7 @@ in
   };
 
   # Disable systemd-logind handling of the lid switch
-  services.logind.lidSwitch = "ignore";
+  services.logind.lidSwitch = "suspend";
 
   # Enable steam
   programs.steam.enable = true;
