@@ -16,13 +16,14 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}%  ",
         "tooltip": false
     },
     "memory": {
         "format": "{}%  "
     },
     "temperature": {
+        "thermal-zone": 2,
         "critical-threshold": 80,
         "format-critical": "Alert: {temperatureC}°C 󰸁",
         "format": "{temperatureC}°C {icon}",
