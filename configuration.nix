@@ -169,11 +169,6 @@ in
   # Enable TLP Battery Manager
   services.tlp.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = false;
-  services.power-profiles-daemon.enable = false;
-  services.xserver.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
   services.xserver = {
     layout = "fr";
@@ -240,10 +235,9 @@ in
     brightnessctl
     swaylock
     pamixer
-    xdg-desktop-portal-hyprland
     xdg-desktop-portal
+    hyprland-protocols
     wireguard-tools
-    qt6.qtwayland
     prismlauncher
     temurin-jre-bin-17
   ];
