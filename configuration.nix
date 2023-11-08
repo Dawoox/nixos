@@ -66,6 +66,20 @@ in
         core.excludesFile = "~/.globalgitignore";
       };
     };
+    programs.neovim = {
+      enable = true;
+      extraConfig = ''
+        lua require ('myConfig')
+      '';
+      
+      plugins = with pkgs.vimPlugins; [
+        lazy-nvim
+      ];
+      
+      extraPackages = with pkgs; [
+        unzip
+      ];
+    };
     programs.zsh = {
       enable = true;
       oh-my-zsh = {
@@ -111,6 +125,7 @@ in
         ".config/waybar/style.css".source = ./dotFiles/waybar.css;
         "assets/wallpaper.jpg".source = ./assets/wallpaper.jpg;
         "assets/lock.jpg".source = ./assets/lock.jpg;
+        "Templates".source = ./templates;
         "scripts".source = ./scripts;
       };
     };
@@ -206,7 +221,7 @@ in
     isNormalUser = true;
     initialPassword = "hello";
     description = "Antoine";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     packages = with pkgs; [
       vivaldi
       wofi
@@ -214,6 +229,9 @@ in
       hyprpaper
       waybar
       mako
+      jetbrains.clion
+      jetbrains.pycharm-community
+      zathura # Lightweight vim like pdf reader
     ];
     shell = pkgs.zsh;
   };
@@ -221,6 +239,9 @@ in
   # Enable zsh
   programs.zsh.enable = true;
 
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true; # virt-manager requires dconf to remember settings
+  
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -231,6 +252,8 @@ in
     git
     tree
     vim
+    virt-manager
+    qemu
     kitty
     brightnessctl
     swaylock

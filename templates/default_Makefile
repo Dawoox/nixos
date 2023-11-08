@@ -1,0 +1,45 @@
+##
+## EPITECH PROJECT, 2023
+## PROJECT_NAME
+## File description:
+## Main Makefile of the project
+##
+
+CC	:=	gcc -std=gnu11
+
+CFLAGS	=	-W
+CFLAGS	+=	-Wall
+CFLAGS	+=	-Wextra
+CFLAGS	+=	-Wundef
+CFLAGS	+=	-Wshadow
+CFLAGS	+=	-Wunreachable-code
+CFLAGS	+=	-Wmissing-prototypes
+CFLAGS	+=	-pedantic
+CFLAGS	+=	-g3
+CFLAGS	+=	-I./include/
+
+BDIR	=	.build
+
+NAME	=	run
+
+SRC	=	main.c
+
+OBJ	=	$(SRC:%.c=$(BDIR)/%.o)
+
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
+	$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
+$(BDIR)/%.o: %.c
+	@ mkdir -p $(dir $@)
+	$(CC) -o $@ -c $< $(CFLAGS)
+
+clean:
+	@ rm -f $(OBJ)
+
+fclean: clean
+	@ rm -f $(NAME)
+
+re: fclean all
+
+.PHONY : all clean fclean re
