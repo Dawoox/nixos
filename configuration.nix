@@ -21,11 +21,12 @@ let
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       (import "${home-manager}/nixos")
     ];
-  
+
   # Home manager
   home-manager.users.dawoox = {
     /* The home.stateVersion option does not have a default and must be set */
@@ -47,7 +48,7 @@ in
         dynamic_background_opacity = "yes";
         window_padding_width = "0.0";
         remember_window_size = "no";
-        
+
         # Tabs
         tab_bar_min_tabs = "2";
         tab_bar_edge = "bottom";
@@ -58,7 +59,7 @@ in
     };
     programs.git = {
       enable = true;
-      userName  = "Antoine";
+      userName = "Antoine";
       userEmail = "me@antoinebellanger.fr";
       extraConfig = {
         init.defaultBranch = "main";
@@ -71,11 +72,11 @@ in
       extraConfig = ''
         lua require ('myConfig')
       '';
-      
+
       plugins = with pkgs.vimPlugins; [
         lazy-nvim
       ];
-      
+
       extraPackages = with pkgs; [
         unzip
       ];
@@ -123,11 +124,35 @@ in
         ".config/wofi/style.css".source = "${wofi_dracula}/style.css";
         ".config/waybar/config".source = ./dotFiles/waybar;
         ".config/waybar/style.css".source = ./dotFiles/waybar.css;
+        ".config/nomacs/Image Lounge.conf".source = ./dotFiles/nomacs.config;
         "assets/wallpaper.jpg".source = ./assets/wallpaper.jpg;
         "assets/lock.jpg".source = ./assets/lock.jpg;
         "Templates".source = ./templates;
         "scripts".source = ./scripts;
       };
+    };
+    gtk = {
+      enable = true;
+
+      iconTheme = {
+        name = "Papirus-Dark";
+        package = pkgs.papirus-icon-theme;
+      };
+
+      theme = {
+        name = "Catppuccin-Mocha-Compact-Peach-Dark";
+        package = pkgs.catppuccin-gtk.override {
+          accents = [ "peach" ];
+          size = "compact";
+          tweaks = [ "rimless" ];
+          variant = "mocha";
+        };
+      };
+    };
+
+    qt = {
+      enable = true;
+      platformTheme = "gtk";
     };
   };
 
@@ -207,7 +232,7 @@ in
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
-    
+
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
@@ -221,7 +246,7 @@ in
     isNormalUser = true;
     initialPassword = "hello";
     description = "Antoine";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
       vivaldi
       wofi
@@ -231,7 +256,9 @@ in
       mako
       jetbrains.clion
       jetbrains.pycharm-community
-      zathura # Lightweight vim like pdf reader
+      zathura # Lightweight PDF reader
+      xfce.thunar # File explorer
+      nomacs # Image viewer
     ];
     shell = pkgs.zsh;
   };
@@ -241,7 +268,7 @@ in
 
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true; # virt-manager requires dconf to remember settings
-  
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -266,7 +293,7 @@ in
   ];
 
   # Enable PAM config (needed for swaylock)
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
