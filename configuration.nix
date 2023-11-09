@@ -248,14 +248,14 @@ in
     description = "Antoine";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
-      vivaldi
-      wofi
-      discord
-      hyprpaper
-      waybar
-      mako
-      jetbrains.clion
-      jetbrains.pycharm-community
+      vivaldi # Web browser
+      wofi # App launcher
+      discord # Why doesn't know Discord?
+      hyprpaper # Hyprland wallpaper utility
+      waybar # Utility bar
+      mako # Notification system
+      jetbrains.clion # Jetbrains C IDE
+      jetbrains.pycharm-community # Jetbrains Python IDE
       zathura # Lightweight PDF reader
       xfce.thunar # File explorer
       nomacs # Image viewer
