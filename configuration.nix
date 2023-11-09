@@ -259,6 +259,7 @@ in
       zathura # Lightweight PDF reader
       xfce.thunar # File explorer
       nomacs # Image viewer
+      obsidian # Note taking / global text editor
     ];
     shell = pkgs.zsh;
   };
