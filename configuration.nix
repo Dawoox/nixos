@@ -125,6 +125,7 @@ in
         ".config/waybar/config".source = ./dotFiles/waybar;
         ".config/waybar/style.css".source = ./dotFiles/waybar.css;
         ".config/nomacs/Image Lounge.conf".source = ./dotFiles/nomacs.config;
+        ".wakatime.cfg".source = ./dotFiles/wakatime.cfg;
         "assets/wallpaper.jpg".source = ./assets/wallpaper.jpg;
         "assets/lock.jpg".source = ./assets/lock.jpg;
         "Templates".source = ./templates;
@@ -260,6 +261,11 @@ in
       xfce.thunar # File explorer
       nomacs # Image viewer
       obsidian # Note taking / global text editor
+      grim # Utility to take screenshort
+      slurp # Needed to make the keybind for grim
+      # === Games ===
+      stepmania # Pretty much a dance dance revolution for keyboard
+      mindustry # A cool farm game (fully open-source and written in Java)
     ];
     shell = pkgs.zsh;
   };
