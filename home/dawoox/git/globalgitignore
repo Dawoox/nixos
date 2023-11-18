@@ -1,0 +1,16 @@
+# Nix dev environment
+.env
+.direnv
+.envrc
+
+# Outputs
+*.out
+
+# Swap files
+*.swp
+
+# IDE garbage
+.idea
+
+# Valgrind crash log
+vgcore.*

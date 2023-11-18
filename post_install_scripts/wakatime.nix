@@ -1,0 +1,16 @@
+{ config, pkgs, ... }:
+let
+  imports = [ "${builtins.fetchTarball "https://github.com/ryantm/agenix/archive/main.tar.gz"}/modules/age.nix" ];
+  environment.systemPackages = [ (pkgs.callPackage "${builtins.fetchTarball "https://github.com/ryantm/agenix/archive/main.tar.gz"}/pkgs/agenix.nix" {}) ];
+  username = "dawoox";
+in
+{
+  age.secrets.wakatime_api_key.file = ../secrets/wakatime_api_key.age;
+  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  system.activationScripts."wakatime_api_key" = ''
+    secret=$(cat "${config.age.secrets.wakatime_api_key.path}")
+    configFile=/home/${username}/.wakatime.cfg
+    echo $secret > /home/dawoox/test.txt
+    ${pkgs.gnused}/bin/sed -i "s#<your-api-key>#$secret#" "$configFile"
+  '';
+}
