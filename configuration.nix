@@ -22,7 +22,7 @@ in
       ./hardware-configuration.nix
       (import "${home-manager}/nixos")
       ./nix/agenix.nix
-      #./post_install_scripts/wakatime.nix
+      ./post_install_scripts/wakatime.nix
     ];
 
   nix.settings.trusted-users = [ "root" "@wheel" ];

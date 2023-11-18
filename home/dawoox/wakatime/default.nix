@@ -1,4 +1,4 @@
 { config, pkgs, ... }:
 {
-  home.file."/home/dawoox/wakatime.cfg".source = ./wakatime.cfg;
+  home.file.".wakatime.cfg".source = ./wakatime.cfg;
 }

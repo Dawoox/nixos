@@ -12,7 +12,7 @@ in
 {
   imports = [
     ./wakatime
-    ./git/default.nix
+    ./git
     ./direnv.nix
     ./kitty.nix
     ./exa.nix
