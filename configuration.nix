@@ -25,8 +25,6 @@ in
       ./post_install_scripts/wakatime.nix
     ];
 
-  nix.settings.trusted-users = [ "root" "@wheel" ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
