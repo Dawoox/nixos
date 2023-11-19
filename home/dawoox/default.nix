@@ -62,6 +62,7 @@ in
       # === GUI/Desktop ===
       jetbrains.clion # Jetbrains C IDE
       jetbrains.pycharm-community # Jetbrains Python IDE
+      vscode # General purpose IDE
       zathura # Lightweight PDF reader
       xfce.thunar # File explorer
       nomacs # Image viewer

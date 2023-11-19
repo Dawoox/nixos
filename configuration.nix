@@ -22,7 +22,7 @@ in
       ./hardware-configuration.nix
       (import "${home-manager}/nixos")
       ./nix/agenix.nix
-      ./post_install_scripts/wakatime.nix
+      #./post_install_scripts/wakatime.nix
     ];
 
   # Bootloader.
@@ -121,9 +121,6 @@ in
 
   # Enable PAM config (needed for swaylock)
   security.pam.services.swaylock = { };
-
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # List services that you want to enable:
 
