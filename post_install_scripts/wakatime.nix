@@ -8,9 +8,8 @@ in
   age.secrets.wakatime_api_key.file = ../secrets/wakatime_api_key.age;
   age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
   system.activationScripts."wakatime_api_key" = ''
-    secret=$(cat "${config.age.secrets.wakatime_api_key.path}")
+    secret=$(cat $(readlink -f "${config.age.secrets.wakatime_api_key.path}"))
     configFile=/home/${username}/.wakatime.cfg
-    echo $secret > /home/dawoox/test.txt
     ${pkgs.gnused}/bin/sed -i "s#<your-api-key>#$secret#" "$configFile"
   '';
 }

@@ -11,7 +11,11 @@ let
 in
 {
   imports = [
+    ./hyprland
+    ./hyprpaper
+    ./waybar
     ./wakatime
+    ./nomacs
     ./git
     ./direnv.nix
     ./kitty.nix
@@ -25,14 +29,8 @@ in
     stateVersion = "23.11";
 
     file = {
-      ".config/hypr/hyprland.conf".source = ../../dotFiles/hyprland.conf;
-      ".config/hypr/hyprpaper.conf".source = ../../dotFiles/hyprpaper.conf;
       ".config/wofi/style.css".source = "${wofi_dracula}/style.css";
-      ".config/waybar/config".source = ../../dotFiles/waybar;
-      ".config/waybar/style.css".source = ../../dotFiles/waybar.css;
-      ".config/nomacs/Image Lounge.conf".source = ../../dotFiles/nomacs.config;
-      "assets/wallpaper.jpg".source = ../../assets/wallpaper.jpg;
-      "assets/lock.jpg".source = ../../assets/lock.jpg;
+      "assets".source = ../../assets;
       "Templates".source = ../../templates;
       "scripts".source = ../../scripts;
     };
@@ -50,7 +48,7 @@ in
       xdg-desktop-portal # Needed on Wayland
       hyprland-protocols # Needed for Hyprland
       wireguard-tools # Wireguard VPN
-      temurin-jre-bin-17 # Java 17 JRE
+      #temurin-jre-bin-17 # Java 17 JRE
       blueman # Bluetooth utility
 
       # === Utils ===
@@ -74,12 +72,13 @@ in
       hyprpaper # Hyprland wallpaper utility
 
       # === Kernel ===
-      #linuxKernel.packages.linux_zen.xpadneo # Xbox Wireless controlers drivers
+      linuxKernel.packages.linux_6_1.xpadneo # Xbox Wireless controlers drivers
       
       # === Games ===
       stepmania # Pretty much a dance dance revolution for keyboard
       mindustry # A cool farm game (fully open-source and written in Java)
       prismlauncher # A Minecraft launcher
+      yuzu-mainline # A Nintendo Switch emulator
     ];
   };
 }
