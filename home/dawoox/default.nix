@@ -48,7 +48,7 @@ in
       xdg-desktop-portal # Needed on Wayland
       hyprland-protocols # Needed for Hyprland
       wireguard-tools # Wireguard VPN
-      #temurin-jre-bin-17 # Java 17 JRE
+      temurin-jre-bin-17 # Java 17 JRE
       blueman # Bluetooth utility
 
       # === Utils ===
@@ -58,6 +58,7 @@ in
       mako # Notification system
       grim # Utility to take screenshort
       slurp # Needed to make the keybind for grim
+      gvfs
 
       # === GUI/Desktop ===
       jetbrains.clion # Jetbrains C IDE
@@ -65,15 +66,18 @@ in
       vscode # General purpose IDE
       zathura # Lightweight PDF reader
       xfce.thunar # File explorer
+      xfce.thunar-volman # Thunar plugin to automount USB drives
+      xfce.thunar-archive-plugin # Thunar plugin for archive
       nomacs # Image viewer
       obsidian # Note taking / global text editor
       vivaldi # Web browser
       wofi # App launcher
       discord # Who doesn't know Discord?
       hyprpaper # Hyprland wallpaper utility
+      termius # SSH Client
 
       # === Kernel ===
-      linuxKernel.packages.linux_6_1.xpadneo # Xbox Wireless controlers drivers
+      #linuxKernel.packages.linux_6_1.xpadneo # Xbox Wireless controlers drivers
       
       # === Games ===
       stepmania # Pretty much a dance dance revolution for keyboard
