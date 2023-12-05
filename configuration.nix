@@ -4,7 +4,7 @@
 
 { config, pkgs, ... }:
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
   sddm_catppuccin = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "sddm";
@@ -115,6 +115,7 @@ in
   };
 
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
