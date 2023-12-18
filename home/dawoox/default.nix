@@ -17,6 +17,7 @@ in
     ./wakatime
     ./nomacs
     ./git
+    ./vim
     ./direnv.nix
     ./kitty.nix
     ./exa.nix
