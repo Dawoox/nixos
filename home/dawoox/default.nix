@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   wofi_dracula = pkgs.fetchFromGitHub {
     owner = "dracula";
     repo = "wofi";
@@ -49,7 +50,8 @@ in
       xdg-desktop-portal # Needed on Wayland
       hyprland-protocols # Needed for Hyprland
       wireguard-tools # Wireguard VPN
-      temurin-jre-bin-17 # Java 17 JRE
+      # temurin-jre-bin-17 # Java 17 JRE
+      jdk17 # Java 17 JDK
       blueman # Bluetooth utility
 
       # === Utils ===
@@ -62,8 +64,9 @@ in
       gvfs
 
       # === GUI/Desktop ===
-      jetbrains.clion # Jetbrains C IDE
+      (jetbrains.plugins.addPlugins jetbrains.clion [ "github-copilot" ])
       jetbrains.pycharm-community # Jetbrains Python IDE
+      jetbrains.webstorm # Jetbrains Web IDE
       vscode # General purpose IDE
       zathura # Lightweight PDF reader
       xfce.thunar # File explorer
