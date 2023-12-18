@@ -64,8 +64,10 @@ in
       gvfs
 
       # === GUI/Desktop ===
+      # Jetbrains C IDE
       (jetbrains.plugins.addPlugins jetbrains.clion [ "github-copilot" ])
-      jetbrains.pycharm-community # Jetbrains Python IDE
+      # Jetbrains Python IDE
+      (jetbrains.plugins.addPlugins jetbrains.pycharm-community [ "github-copilot" ])
       jetbrains.webstorm # Jetbrains Web IDE
       vscode # General purpose IDE
       zathura # Lightweight PDF reader
