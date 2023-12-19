@@ -21,6 +21,8 @@ in
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       (import "${home-manager}/nixos")
+      # Fetch the nixos-hardware repository and get the Thinkpad T480 config
+      ${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/lenovo/thinkpad/t480
       ./nix/agenix.nix
       ./post_install_scripts/wakatime.nix
     ];
