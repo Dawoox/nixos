@@ -116,8 +116,22 @@ in
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
-  virtualisation.libvirtd.enable = true;
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    docker.enable = true;
+    # Settings of the vm created when running `nixos-rebuild build-vm`
+    vmVariant = {
+      virtualisation = {
+        memorySize =  2048; # Use 2048MiB memory.#
+        cores = 2; # Run on 2 cores
+        # Pass some arguments to qemu to enable 3D acceleration for Hyprland
+        qemu.options = [
+          "-vga virtio"
+          "-display gtk,gl=on,grab-on-hover=on,show-cursor=on"
+        ];
+      };
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
