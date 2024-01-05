@@ -55,6 +55,7 @@ in
       blueman # Bluetooth utility
 
       # === Utils ===
+      bat # Just like cat but in a vim buffer
       virt-manager
       qemu
       waybar # Utility bar
