@@ -13,6 +13,7 @@
       eval "$(direnv hook zsh)"
       alias lock="~/scripts/lock_custom.sh"
       alias epidock="sudo docker run -it --rm -v $(pwd):/home/project -w /home/project epitechcontent/epitest-docker:latest /bin/bash"
+      alias waybar-reload="~/waybar_reload.sh"
     '';
     plugins = [
       {
