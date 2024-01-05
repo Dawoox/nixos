@@ -16,13 +16,20 @@ window#waybar.hidden {
 
 #window {
 	margin-top: 6px;
+	margin-left: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
+	margin-bottom: 5px;
 	border-radius: 10px;
 	transition: none;
-	color: transparent;
-	background: transparent;
+	color: #161320;
+	background: #B5E8E0;
 }
+
+#window#waybar.empty #window {
+	background-color: transparent;
+}
+
 #tags {
 	margin-top: 6px;
 	margin-left: 12px;
