@@ -16,16 +16,8 @@
       alias waybar-reload="~/waybar_reload.sh"
     '';
     enableAutosuggestions = true;
+    syntaxHighlighting.enable = true;
     plugins = [
-      {
-        name = "zsh-syntax-highlighting";
-        src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-syntax-highlighting";
-          rev = "0.7.1";
-          hash = "sha256-gOG0NLlaJfotJfs+SUhGgLTNOnGLjoqnUp54V9aFJg8=";
-        };
-      }
       # Need to be disable currently because its too
       # cpu intensive, so it add 0.4s to zsh load
       #{
