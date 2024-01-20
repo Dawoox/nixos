@@ -31,6 +31,12 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Don't wait for NetworkManager initialization to continue the rebuild
+  # This prevent waiting the 60 timeout for NetworkManager
+  # This condition trigger with some edge-cases network configurations
+  # For example, having a bridge with a wireguard VPN connection in it
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   networking.hostName = "laptop-antoine"; # Define your hostname.
 
   # Disable systemd-logind handling of the lid switch
