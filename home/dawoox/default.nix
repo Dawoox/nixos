@@ -72,9 +72,6 @@ in
       jetbrains.webstorm # Jetbrains Web IDE
       vscode # General purpose IDE
       zathura # Lightweight PDF reader
-      xfce.thunar # File explorer
-      xfce.thunar-volman # Thunar plugin to automount USB drives
-      xfce.thunar-archive-plugin # Thunar plugin for archive
       nomacs # Image viewer
       obsidian # Note taking / global text editor
       vivaldi # Web browser

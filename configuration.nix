@@ -41,7 +41,15 @@ in
     steam.enable = true;
     hyprland.enable = true;
     zsh.enable = true;
-    dconf.enable = true; # virt-manager requires dconf to remember settings
+    dconf.enable = true; # virt-manager requires dconf to save settings
+    xfconf.enable = true; # thunar requires xfonc to save settings
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+      ];
+    }
   };
 
   # Enable networking
@@ -100,6 +108,9 @@ in
 
     # Enable the blueman bluetooth manager
     #blueman.enable = true;
+
+    gvfs.enable = true; # Support for exotics fs, mount, thunar trash
+    tumbler.enable = true; # Thumbnail support for thunar
   };
 
   # Enable sound system
@@ -142,7 +153,7 @@ in
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 6567 42665 ];
@@ -157,5 +168,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
