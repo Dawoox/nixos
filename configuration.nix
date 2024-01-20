@@ -52,6 +52,10 @@ in
     }
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+
   # Enable networking
   networking.networkmanager.enable = true;
 
