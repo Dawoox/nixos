@@ -49,7 +49,7 @@ in
         thunar-archive-plugin
         thunar-volman
       ];
-    }
+    };
   };
 
   nixpkgs.config.permittedInsecurePackages = [
