@@ -89,7 +89,7 @@ in
       "files.autoSave" = "onFocusChange";
 
       # Git / Github
-      "git.autofech" = true;
+      "git.autofetch" = true;
     };
   };
 }
