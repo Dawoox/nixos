@@ -19,6 +19,7 @@ in
     ./nomacs
     ./git
     ./vim
+    ./vscodium.nix
     ./direnv.nix
     ./kitty.nix
     ./exa.nix
@@ -70,7 +71,6 @@ in
       # Jetbrains Python IDE
       (jetbrains.plugins.addPlugins jetbrains.pycharm-community [ "github-copilot" ])
       jetbrains.webstorm # Jetbrains Web IDE
-      vscode # General purpose IDE
       zathura # Lightweight PDF reader
       nomacs # Image viewer
       obsidian # Note taking / global text editor
