@@ -134,7 +134,7 @@ in
     initialPassword = "hello";
     shell = pkgs.zsh;
     createHome = true;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker"];
   };
 
   virtualisation = {
