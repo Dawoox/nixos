@@ -26,6 +26,7 @@ in
     ./zsh.nix
     ./gtk.nix
     ./qt.nix
+    ./wofi.nix
   ];
 
   home = {
@@ -57,25 +58,23 @@ in
 
       # === Utils ===
       bat # Just like cat but in a vim buffer
-      virt-manager
-      qemu
+      virt-manager # Virtual machine manager
+      qemu # QEMU emulation system
       waybar # Utility bar
       mako # Notification system
       grim # Utility to take screenshort
       slurp # Needed to make the keybind for grim
-      gvfs
 
       # === GUI/Desktop ===
       # Jetbrains C IDE
       (jetbrains.plugins.addPlugins jetbrains.clion [ "github-copilot" ])
       # Jetbrains Python IDE
-      (jetbrains.plugins.addPlugins jetbrains.pycharm-community [ "github-copilot" ])
+      (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [ "github-copilot" ])
       jetbrains.webstorm # Jetbrains Web IDE
       zathura # Lightweight PDF reader
       nomacs # Image viewer
       obsidian # Note taking / global text editor
       vivaldi # Web browser
-      wofi # App launcher
       discord # Who doesn't know Discord?
       hyprpaper # Hyprland wallpaper utility
       termius # SSH Client
