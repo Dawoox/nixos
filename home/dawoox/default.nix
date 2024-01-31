@@ -20,6 +20,7 @@ in
     ./git
     ./vim
     ./vscodium.nix
+    ./mako.nix
     ./direnv.nix
     ./kitty.nix
     ./exa.nix
@@ -61,7 +62,6 @@ in
       virt-manager # Virtual machine manager
       qemu # QEMU emulation system
       waybar # Utility bar
-      mako # Notification system
       grim # Utility to take screenshort
       slurp # Needed to make the keybind for grim
 
