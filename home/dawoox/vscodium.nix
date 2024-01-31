@@ -90,6 +90,8 @@ in
 
       # Git / Github
       "git.autofetch" = true;
+
+      "window.titleBarStyle" = "custom";
     };
   };
 }
