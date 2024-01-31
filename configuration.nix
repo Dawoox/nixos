@@ -28,8 +28,14 @@ in
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    plymouth.enable = true;
+    kernelParams = [ "quiet" ];
+  };
 
   # Don't wait for NetworkManager initialization to continue the rebuild
   # This prevent waiting the 60 timeout for NetworkManager
