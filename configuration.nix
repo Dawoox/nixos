@@ -65,7 +65,8 @@ in
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-        "electron-25.9.0"
+    "electron-19.1.9",
+    "electron-25.9.0"
   ];
 
   # Enable networking
@@ -169,6 +170,14 @@ in
   security.pam.services.swaylock = { };
   
   security.polkit.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+    ];
+  };
 
   # List services that you want to enable:
 

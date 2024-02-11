@@ -80,6 +80,7 @@ in
       discord # Who doesn't know Discord?
       hyprpaper # Hyprland wallpaper utility
       termius # SSH Client
+      etcher # IMG/ISO Flasher
 
       # === Kernel ===
       #linuxKernel.packages.linux_6_1.xpadneo # Xbox Wireless controlers drivers
