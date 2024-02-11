@@ -41,7 +41,22 @@ in
   # This prevent waiting the 60 timeout for NetworkManager
   # This condition trigger with some edge-cases network configurations
   # For example, having a bridge with a wireguard VPN connection in it
-  systemd.services.NetworkManager-wait-online.enable = false;
+  systemd = {
+    services.NetworkManager-wait-online.enable = false;
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+    };
+  };
 
   networking.hostName = "laptop-antoine"; # Define your hostname.
 
@@ -127,6 +142,8 @@ in
 
     gvfs.enable = true; # Support for exotics fs, mount, thunar trash
     tumbler.enable = true; # Thumbnail support for thunar
+
+    fwupd.enable = true;
   };
 
   # Enable sound system
@@ -165,6 +182,8 @@ in
 
   # Enable PAM config (needed for swaylock)
   security.pam.services.swaylock = { };
+  
+  security.polkit.enable = true;
 
   # List services that you want to enable:
 

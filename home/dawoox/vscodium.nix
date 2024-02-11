@@ -68,11 +68,11 @@ in
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
-    mutableExtensionsDir = false;
+    package = pkgs.vscode;
+    mutableExtensionsDir = true;
     extensions = with pkgs.vscode-extensions; [
-      copilot
-      copilot-chat
+      #copilot
+      #copilot-chat
       palenight-theme
       material-icons
       nix-plugins

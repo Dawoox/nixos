@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   wofi_dracula = pkgs.fetchFromGitHub {
     owner = "dracula";
     repo = "wofi";
@@ -23,6 +22,7 @@ in
     ./mako.nix
     ./direnv.nix
     ./kitty.nix
+    ./firefox.nix
     ./exa.nix
     ./zsh.nix
     ./gtk.nix
@@ -61,7 +61,6 @@ in
       bat # Just like cat but in a vim buffer
       virt-manager # Virtual machine manager
       qemu # QEMU emulation system
-      waybar # Utility bar
       grim # Utility to take screenshort
       slurp # Needed to make the keybind for grim
 
