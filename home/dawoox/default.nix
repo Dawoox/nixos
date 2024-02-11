@@ -56,6 +56,9 @@ in
       # temurin-jre-bin-17 # Java 17 JRE
       jdk17 # Java 17 JDK
       blueman # Bluetooth utility
+      lxde.lxsession # LXDE session manager
+      # LXSession is here to do some magic with the polkit of gnome
+      # Doesn't ask why, don't ask how, it just works
 
       # === Utils ===
       bat # Just like cat but in a vim buffer
