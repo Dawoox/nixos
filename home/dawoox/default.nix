@@ -72,6 +72,8 @@ in
 
       # === System Utilities ===
       gnome.gnome-disk-utility # Disk utility
+      baobab # Disk usage analyzer
+
       # === GUI/Desktop ===
       # Jetbrains C IDE
       (jetbrains.plugins.addPlugins jetbrains.clion [ "github-copilot" ])
