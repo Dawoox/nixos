@@ -184,6 +184,16 @@ in
       enable = false;
       package = pkgs.pulseaudioFull;
     };
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+          Experimental = true;
+        };
+      };
+    };
   };
 
   # List services that you want to enable:
