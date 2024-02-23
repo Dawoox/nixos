@@ -67,6 +67,7 @@ in
       grim # Utility to take screenshort
       slurp # Needed to make the keybind for grim
       man-pages # Who doesn't know these ?
+      croc # P2P file transfer
 
       # === GUI/Desktop ===
       # Jetbrains C IDE
