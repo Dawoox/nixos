@@ -70,6 +70,8 @@ in
       croc # P2P file transfer
       lazygit # Git TUI Client
 
+      # === System Utilities ===
+      gnome.gnome-disk-utility # Disk utility
       # === GUI/Desktop ===
       # Jetbrains C IDE
       (jetbrains.plugins.addPlugins jetbrains.clion [ "github-copilot" ])
