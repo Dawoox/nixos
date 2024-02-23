@@ -124,7 +124,7 @@ in
     printing.enable = true;
 
     # Enable the blueman bluetooth manager
-    #blueman.enable = true;
+    blueman.enable = true;
 
     gvfs.enable = true; # Support for exotics fs, mount, thunar trash
     tumbler.enable = true; # Thumbnail support for thunar
