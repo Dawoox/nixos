@@ -66,6 +66,7 @@ in
       qemu # QEMU emulation system
       grim # Utility to take screenshort
       slurp # Needed to make the keybind for grim
+      man-pages # Who doesn't know these ?
 
       # === GUI/Desktop ===
       # Jetbrains C IDE
