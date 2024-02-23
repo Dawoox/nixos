@@ -130,6 +130,7 @@ in
     tumbler.enable = true; # Thumbnail support for thunar
 
     fwupd.enable = true;
+    upower.enable = true;
   };
 
   # Enable sound system
