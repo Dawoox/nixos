@@ -68,6 +68,7 @@ in
       slurp # Needed to make the keybind for grim
       man-pages # Who doesn't know these ?
       croc # P2P file transfer
+      lazygit # Git TUI Client
 
       # === GUI/Desktop ===
       # Jetbrains C IDE
