@@ -135,7 +135,6 @@ in
 
   # Enable sound system
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -178,6 +177,13 @@ in
     extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
     ];
+  };
+
+  hardware = {
+    pulseaudio = {
+      enable = false;
+      package = pkgs.pulseaudioFull;
+    };
   };
 
   # List services that you want to enable:
