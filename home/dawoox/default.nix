@@ -31,6 +31,8 @@ in
   ];
 
   home = {
+    pointerCursor.name = "Vanilla-DMZ";
+    pointerCursor.package = pkgs.vanilla-dmz;
     stateVersion = "23.11";
 
     file = {
