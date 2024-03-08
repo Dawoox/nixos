@@ -22,10 +22,12 @@ in
       ./hardware-configuration.nix
       (import "${home-manager}/nixos")
       # Fetch the nixos-hardware repository and get the Thinkpad T480 config
-      "${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/lenovo/thinkpad/t480"
+      # "${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/lenovo/thinkpad/t480"
       ./nix/agenix.nix
-      ./post_install_scripts/wakatime.nix
+      #./post_install_scripts/wakatime.nix
     ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot = {
@@ -33,7 +35,7 @@ in
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    plymouth.enable = true;
+    plymouth.enable = false;
     kernelParams = [ "quiet" ];
   };
 
