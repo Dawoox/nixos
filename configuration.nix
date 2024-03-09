@@ -24,7 +24,7 @@
   networking.networkmanager.enable = true;
 
   # Configure console keymap
-  console.keyMap = "fr";
+  #console.keyMap = "fr";
 
   # Enable sound system
   sound.enable = true;
