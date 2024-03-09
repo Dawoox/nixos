@@ -17,10 +17,6 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    config.permittedInsecurePackages = [
-      "electron-19.1.9"
-      "electron-25.9.0"
-    ];
     overlays = [
       (self: super: {
         nix-direnv = super.nix-direnv.override {
