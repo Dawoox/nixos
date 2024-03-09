@@ -8,7 +8,7 @@
     #./post_install_scripts/wakatime.nix
   ];
 
-  networking.hostName = "laptop-antoine";
+  networking.hostName = "neutron";
   system.stateVersion = "23.11";
 
   # Don't wait for NetworkManager initialization to continue the rebuild
@@ -24,7 +24,7 @@
   networking.networkmanager.enable = true;
 
   # Configure console keymap
-  #console.keyMap = "fr";
+  console.keyMap = "fr";
 
   # Enable sound system
   sound.enable = true;

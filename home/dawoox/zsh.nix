@@ -6,10 +6,6 @@
       enable = true;
       theme = "robbyrussell";
     };
-    sessionVariables = {
-      NIXPKGS_ALLOW_UNFREE = "1";
-      ASAN_OPTIONS = "fast_unwind_on_malloc=false";
-    };
     initExtra = ''
       eval "$(direnv hook zsh)"
       alias lock="~/scripts/lock_custom.sh"

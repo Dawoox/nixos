@@ -18,7 +18,7 @@ in
     ./nomacs
     ./git
     ./vim
-    ./vscodium.nix
+    ./vscode.nix
     ./mako.nix
     ./direnv.nix
     ./kitty.nix

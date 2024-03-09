@@ -5,7 +5,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    plymouth.enable = false;
+    plymouth.enable = true;
     kernelParams = [ "quiet" ];
   };
 }

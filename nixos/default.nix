@@ -26,6 +26,8 @@
     ];
   };
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {

@@ -55,7 +55,7 @@
         };
       };
 
-      nixosConfigurations."laptop-antoine" = inputs.nixpkgs.lib.nixosSystem (defaultConfig // {
+      nixosConfigurations."neutron" = inputs.nixpkgs.lib.nixosSystem (defaultConfig // {
         modules = defaultConfig.modules ++ [
           ./configuration.nix
           hardware.framework-16-7940-amd
