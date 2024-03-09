@@ -1,43 +1,13 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
-  sddm_catppuccin = pkgs.fetchFromGitHub {
-    owner = "catppuccin";
-    repo = "sddm";
-    rev = "7fc67d1027cdb7f4d833c5d23a8c34a0029b0661";
-    hash = "sha256-SjYwyUvvx/ageqVH5MmYmHNRKNvvnF3DYMJ/f2/L+Go=";
-  };
-in
+{ ... }:
 {
-  home-manager.useGlobalPkgs = true;
-  home-manager.users.dawoox = import ./home/dawoox;
+  imports = [
+    ./nixos
+    ./nixos/hardware-configuration.nix
+    #./post_install_scripts/wakatime.nix
+  ];
 
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      (import "${home-manager}/nixos")
-      # Fetch the nixos-hardware repository and get the Thinkpad T480 config
-      # "${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/lenovo/thinkpad/t480"
-      ./nix/agenix.nix
-      #./post_install_scripts/wakatime.nix
-    ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Bootloader.
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-    plymouth.enable = false;
-    kernelParams = [ "quiet" ];
-  };
+  networking.hostName = "laptop-antoine";
+  system.stateVersion = "23.11";
 
   # Don't wait for NetworkManager initialization to continue the rebuild
   # This prevent waiting the 60 timeout for NetworkManager
@@ -45,26 +15,8 @@ in
   # For example, having a bridge with a wireguard VPN connection in it
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  networking.hostName = "laptop-antoine"; # Define your hostname.
-
   # Disable systemd-logind handling of the lid switch
   services.logind.lidSwitch = "suspend";
-
-  # Enable programs
-  programs = {
-    steam.enable = true;
-    hyprland.enable = true;
-    zsh.enable = true;
-    dconf.enable = true; # virt-manager requires dconf to save settings
-    xfconf.enable = true; # thunar requires xfonc to save settings
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-      ];
-    };
-  };
 
   nixpkgs.config.permittedInsecurePackages = [
     "electron-19.1.9"
@@ -74,79 +26,12 @@ in
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "Europe/Paris";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "fr_FR.UTF-8";
-    LC_IDENTIFICATION = "fr_FR.UTF-8";
-    LC_MEASUREMENT = "fr_FR.UTF-8";
-    LC_MONETARY = "fr_FR.UTF-8";
-    LC_NAME = "fr_FR.UTF-8";
-    LC_NUMERIC = "fr_FR.UTF-8";
-    LC_PAPER = "fr_FR.UTF-8";
-    LC_TELEPHONE = "fr_FR.UTF-8";
-    LC_TIME = "fr_FR.UTF-8";
-  };
-
   # Configure console keymap
   console.keyMap = "fr";
-
-  services = {
-    # Configure Keybinds in the X11 server (Not sure if its needed)
-    xserver = {
-      layout = "fr";
-      xkbVariant = "";
-    };
-
-    # Enable pipewire
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-
-    # Enable SDDM login manager
-    xserver.displayManager.sddm = {
-      enable = true;
-      theme = "${sddm_catppuccin}/src/catppuccin-macchiato";
-    };
-
-    # Enable TLP Battery Manager
-    tlp.enable = true;
-
-    # Enable the X11 windowing system.
-    xserver.enable = true;
-
-    # Enable CUPS to print documents.
-    printing.enable = true;
-
-    # Enable the blueman bluetooth manager
-    blueman.enable = true;
-
-    gvfs.enable = true; # Support for exotics fs, mount, thunar trash
-    tumbler.enable = true; # Thumbnail support for thunar
-
-    fwupd.enable = true;
-    upower.enable = true;
-  };
 
   # Enable sound system
   sound.enable = true;
   security.rtkit.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.dawoox = {
-    isNormalUser = true;
-    initialPassword = "hello";
-    shell = pkgs.zsh;
-    createHome = true;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker"];
-  };
 
   virtualisation = {
     libvirtd.enable = true;
@@ -165,40 +50,8 @@ in
     };
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Enable PAM config (needed for swaylock)
   security.pam.services.swaylock = { };
-  
-  security.polkit.enable = true;
-
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-    ];
-  };
-
-  hardware = {
-    pulseaudio = {
-      enable = false;
-      package = pkgs.pulseaudioFull;
-    };
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-      settings = {
-        General = {
-          Enable = "Source,Sink,Media,Socket";
-          Experimental = true;
-        };
-      };
-    };
-  };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -206,14 +59,4 @@ in
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 6567 42665 ];
   networking.firewall.allowedUDPPorts = [ 6567 42665 ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
 }

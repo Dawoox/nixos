@@ -175,7 +175,6 @@ in
           "bluetooth"
           "network"
           "battery"
-          "battert#bat2"
           "tray"
           "custom/power"
         ];
@@ -208,18 +207,6 @@ in
           tooltip-format-disconnected = "No connection";
         };
         battery = {
-          bat = "BAT0";
-          format = "{icon}";
-          format-charging = "󰂄";
-          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-          format-plugged = "󰚦 ";
-          states = {
-            critical = 10;
-            warning = 20;
-          };
-          tooltip-format = "{capacity}% - {time}";
-        };
-        "battery#bat2" = {
           bat = "BAT1";
           format = "{icon}";
           format-charging = "󰂄";
