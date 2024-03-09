@@ -9,7 +9,7 @@
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "@whell" ];
-      auto-optimize-store = true;
+      auto-optimise-store = true;
       warn-dirty = false;
     };
     optimise.automatic = true;
@@ -67,6 +67,6 @@
       vim
     ];
     pathsToLink = [ "/share/nix-direnv" ];
-    etc.issue.txt = (builtins.readFile ./issue.txt);
+    etc.issue.text = (builtins.readFile ./issue.txt);
   };
 }
