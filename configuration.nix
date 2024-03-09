@@ -2,6 +2,8 @@
 {
   imports = [
     ./nixos
+    ./nixos/graphical
+    ./nixos/users/dawoox.nix
     ./nixos/hardware-configuration.nix
     #./post_install_scripts/wakatime.nix
   ];
@@ -17,11 +19,6 @@
 
   # Disable systemd-logind handling of the lid switch
   services.logind.lidSwitch = "suspend";
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-19.1.9"
-    "electron-25.9.0"
-  ];
 
   # Enable networking
   networking.networkmanager.enable = true;

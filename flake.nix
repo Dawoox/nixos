@@ -1,15 +1,14 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
-    nixpkgs_unstable.url = "github:NixOS/nixos-unstable";
+    nixpkgs_unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
+    nixos-hardware.url = "github:dawoox/nixos-hardware/master";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 
@@ -52,7 +51,8 @@
       nixosConfigurations."laptop-antoine" = inputs.nixpkgs.lib.nixosSystem (defaultConfig // {
         modules = defaultConfig.modules ++ [
           ./configuration.nix
-        ]
-      })
+          hardware.framework-16-7940-amd
+        ];
+      });
     };
 }

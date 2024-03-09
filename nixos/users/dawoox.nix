@@ -1,5 +1,6 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  home-manager.useGlobalPkgs = true;
   home-manager.users.dawoox = import ../../home/dawoox;
 
   users.users.dawoox = {

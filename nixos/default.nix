@@ -17,6 +17,10 @@
 
   nixpkgs = {
     config.allowUnfree = true;
+    config.permittedInsecurePackages = [
+      "electron-19.1.9"
+      "electron-25.9.0"
+    ];
     overlays = [
       (self: super: {
         nix-direnv = super.nix-direnv.override {
@@ -63,6 +67,6 @@
       vim
     ];
     pathsToLink = [ "/share/nix-direnv" ];
-    etc.issue.txt = (bultins.readFile ./issue.txt);
-  }
+    etc.issue.txt = (builtins.readFile ./issue.txt);
+  };
 }
