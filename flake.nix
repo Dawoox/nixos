@@ -11,8 +11,8 @@
     nixos-hardware.url = "github:dawoox/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: 
-    let 
+  outputs = { self, nixpkgs, ... }@inputs:
+    let
       cfg = {
         system = "x86_64-linux";
         config = {
@@ -44,8 +44,10 @@
           { home-manager.extraSpecialArgs = extraArgs; }
         ];
       };
-    in 
+    in
     {
+      formatter.${cfg.system} = pkgs.nixpkgs-fmt;
+
       homeConfigurations = {
         "dawoox" = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;

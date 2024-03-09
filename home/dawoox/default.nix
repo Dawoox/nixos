@@ -93,7 +93,7 @@ in
 
       # === Kernel ===
       #linuxKernel.packages.linux_6_1.xpadneo # Xbox Wireless controlers drivers
-      
+
       # === Games ===
       stepmania # Pretty much a dance dance revolution for keyboard
       mindustry # A cool farm game (fully open-source and written in Java)

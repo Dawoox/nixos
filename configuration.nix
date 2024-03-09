@@ -36,7 +36,7 @@
     # Settings of the vm created when running `nixos-rebuild build-vm`
     vmVariant = {
       virtualisation = {
-        memorySize =  2048; # Use 2048MiB memory.#
+        memorySize = 2048; # Use 2048MiB memory.#
         cores = 2; # Run on 2 cores
         # Pass some arguments to qemu to enable 3D acceleration for Hyprland
         qemu.options = [
