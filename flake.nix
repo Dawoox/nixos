@@ -15,7 +15,13 @@
     let 
       cfg = {
         system = "x86_64-linux";
-        config.allowUnfree = true;
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [
+            "electron-19.1.9"
+            "electron-25.9.0"
+          ];
+        };
       };
 
       pkgs = import inputs.nixpkgs (cfg // {
