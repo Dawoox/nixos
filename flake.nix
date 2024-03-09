@@ -21,7 +21,6 @@
       pkgs = import inputs.nixpkgs (cfg // {
         overlays = [
           (_: _: { unstable = import inputs.nixpkgs_unstable cfg; })
-          (_: _: { legacy = import inputs.nixpkgs_legacy cfg; })
         ];
       });
 
