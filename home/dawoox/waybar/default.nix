@@ -156,16 +156,16 @@ in
         mpris = {
           format = "{player_icon} {dynamic}";
           format-paused = "{status_icon} <i>{dynamic}</i>";
-          dynamic-order = ["artist" "title"];
-          dynamic-importance-order = ["title" "artist"];
+          dynamic-order = [ "artist" "title" ];
+          dynamic-importance-order = [ "title" "artist" ];
           dynamic-len = 30;
           player-icons = {
-              default = " ";
-              spotify = " ";
-              firefox = " ";
+            default = " ";
+            spotify = " ";
+            firefox = " ";
           };
           status-icons = {
-              paused = " ";
+            paused = " ";
           };
         };
 
@@ -175,7 +175,6 @@ in
           "bluetooth"
           "network"
           "battery"
-          "battert#bat2"
           "tray"
           "custom/power"
         ];
@@ -183,7 +182,7 @@ in
           format = "{icon}";
           format-bluetooth = "{icon}";
           format-muted = "";
-          format-icons = { "default" = ["" ""]; };
+          format-icons = { "default" = [ "" "" ]; };
           on-click = "pavucontrol";
           tooltip-format = "{volume}%";
         };
@@ -208,18 +207,6 @@ in
           tooltip-format-disconnected = "No connection";
         };
         battery = {
-          bat = "BAT0";
-          format = "{icon}";
-          format-charging = "󰂄";
-          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-          format-plugged = "󰚦 ";
-          states = {
-            critical = 10;
-            warning = 20;
-          };
-          tooltip-format = "{capacity}% - {time}";
-        };
-        "battery#bat2" = {
           bat = "BAT1";
           format = "{icon}";
           format-charging = "󰂄";

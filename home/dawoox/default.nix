@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   wofi_dracula = pkgs.fetchFromGitHub {
     owner = "dracula";
@@ -18,7 +18,7 @@ in
     ./nomacs
     ./git
     ./vim
-    ./vscodium.nix
+    ./vscode.nix
     ./mako.nix
     ./direnv.nix
     ./kitty.nix
@@ -71,6 +71,8 @@ in
       man-pages # Who doesn't know these ?
       croc # P2P file transfer
       lazygit # Git TUI Client
+      nvtop-amd # GPU Monitoring
+      unstable.btop # System Monitoring
 
       # === System Utilities ===
       gnome.gnome-disk-utility # Disk utility
@@ -93,12 +95,12 @@ in
 
       # === Kernel ===
       #linuxKernel.packages.linux_6_1.xpadneo # Xbox Wireless controlers drivers
-      
+
       # === Games ===
       stepmania # Pretty much a dance dance revolution for keyboard
       mindustry # A cool farm game (fully open-source and written in Java)
       prismlauncher # A Minecraft launcher
-      yuzu-mainline # A Nintendo Switch emulator
+      ryujinx # A Nintendo Switch emulator
     ];
   };
 }

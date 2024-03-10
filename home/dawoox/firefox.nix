@@ -7,9 +7,7 @@
         default = "Google";
         force = true;
       };
-      settings = {
-        
-      };
+      settings = { };
     };
   };
 }

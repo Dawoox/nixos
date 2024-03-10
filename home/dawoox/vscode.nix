@@ -68,7 +68,7 @@ in
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
+    package = pkgs.unstable.vscode;
     mutableExtensionsDir = true;
     extensions = with pkgs.vscode-extensions; [
       #copilot
