@@ -98,7 +98,7 @@ in
       stepmania # Pretty much a dance dance revolution for keyboard
       mindustry # A cool farm game (fully open-source and written in Java)
       prismlauncher # A Minecraft launcher
-      yuzu-mainline # A Nintendo Switch emulator
+      ryujinx # A Nintendo Switch emulator
     ];
   };
 }
