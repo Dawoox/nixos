@@ -3,6 +3,7 @@
   imports = [
     ./nixos
     ./nixos/graphical
+    ./nixos/gaming
     ./nixos/users/dawoox.nix
     ./nixos/hardware-configuration.nix
     #./post_install_scripts/wakatime.nix
