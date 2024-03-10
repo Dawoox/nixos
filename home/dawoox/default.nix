@@ -71,6 +71,8 @@ in
       man-pages # Who doesn't know these ?
       croc # P2P file transfer
       lazygit # Git TUI Client
+      nvtop-amd # GPU Monitoring
+      unstable.btop # System Monitoring
 
       # === System Utilities ===
       gnome.gnome-disk-utility # Disk utility
