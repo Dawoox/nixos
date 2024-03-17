@@ -42,6 +42,8 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
+  zramSwap.enable = true;
+
   programs = {
     hyprland.enable = true;
     command-not-found.enable = true;
@@ -50,9 +52,6 @@
   };
 
   services = {
-    # Enable TLP Battery Manager
-    #tlp.enable = true;
-
     fwupd.enable = true;
     upower.enable = true;
   };
