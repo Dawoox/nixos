@@ -11,6 +11,7 @@ let
 in
 {
   imports = [
+    ./shell
     ./hyprland
     ./hyprpaper
     ./waybar
@@ -24,7 +25,6 @@ in
     ./kitty.nix
     ./firefox.nix
     ./exa.nix
-    ./zsh.nix
     ./gtk.nix
     ./qt.nix
     ./wofi.nix

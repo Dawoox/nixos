@@ -2,16 +2,15 @@
 {
   programs.zsh = {
     enable = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "robbyrussell";
-    };
     initExtra = ''
       eval "$(direnv hook zsh)"
-      alias lock="~/scripts/lock_custom.sh"
-      alias epidock="sudo docker run -it --rm -v $(pwd):/home/project -w /home/project epitechcontent/epitest-docker:latest /bin/bash"
-      alias waybar-reload="~/waybar_reload.sh"
     '';
+    shellAliases = {
+      "lock" = "~/scripts/lock_custom.sh";
+      "epidock" = "sudo docker run -it --rm -v $(pwd):/home/project -w /home/project epitechcontent/epitest-docker:latest /bin/bash";
+      "waybar-reload" = "~/waybar_reload.sh";
+      "obsidian" = "obsidian --disable-gpu";
+    };
     enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
     plugins = [
