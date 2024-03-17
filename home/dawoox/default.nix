@@ -52,7 +52,6 @@ in
       brightnessctl # Control screen brightness
       swaylock # Lock screen
       pamixer # Control audio
-      xdg-desktop-portal # Needed on Wayland
       hyprland-protocols # Needed for Hyprland
       wireguard-tools # Wireguard VPN
       # temurin-jre-bin-17 # Java 17 JRE
@@ -83,6 +82,7 @@ in
       (jetbrains.plugins.addPlugins jetbrains.clion [ "github-copilot" ])
       # Jetbrains Python IDE
       (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [ "github-copilot" ])
+      unstable.jetbrains.rust-rover
       jetbrains.webstorm # Jetbrains Web IDE
       zathura # Lightweight PDF reader
       nomacs # Image viewer
@@ -101,6 +101,7 @@ in
       mindustry # A cool farm game (fully open-source and written in Java)
       prismlauncher # A Minecraft launcher
       ryujinx # A Nintendo Switch emulator
+      heroic # Multi-Brands Launcher
     ];
   };
 }
