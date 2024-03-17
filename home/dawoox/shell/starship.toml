@@ -1,0 +1,12 @@
+format = "$directory$git_branch$cmd_duration$character"
+right_format = "$c$cmake$go$haskell$java$lua$nodejs$python$rust$package"
+add_newline = false
+
+[os]
+disabled = false
+
+[git_metrics]
+disabled = true
+
+[cmd_duration]
+format = "[$duration]($style) "
