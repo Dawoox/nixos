@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, ida, ... }:
 let
   wofi_dracula = pkgs.fetchFromGitHub {
     owner = "dracula";
@@ -102,6 +102,10 @@ in
       prismlauncher # A Minecraft launcher
       ryujinx # A Nintendo Switch emulator
       heroic # Multi-Brands Launcher
+
+      # Temporary
+      # Those packages way stop working at any time
+      ida
     ];
   };
 }

@@ -21,6 +21,22 @@
         "type": "github"
       }
     },
+    "ida": {
+      "locked": {
+        "lastModified": 1677172271,
+        "narHash": "sha256-MfuXzqwi+a5gawnZ6sfqoAbIINoNNeusVqoOXbKB7x8=",
+        "owner": "bbjubjub2494",
+        "repo": "nixpkgs",
+        "rev": "dc39c67665c0b0572f952d216b7c33f5876d7717",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bbjubjub2494",
+        "ref": "idafree",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1709991665,
@@ -72,6 +88,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "ida": "ida",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs_unstable": "nixpkgs_unstable"

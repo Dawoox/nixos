@@ -9,6 +9,8 @@
     };
 
     nixos-hardware.url = "github:dawoox/nixos-hardware/master";
+
+    ida.url = "github:bbjubjub2494/nixpkgs/idafree";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -31,6 +33,7 @@
       });
 
       extraArgs = {
+        ida = (import inputs.ida cfg).ida-free;
         inherit pkgs;
       };
 
