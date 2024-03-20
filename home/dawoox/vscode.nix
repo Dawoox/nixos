@@ -92,6 +92,9 @@ in
       "git.autofetch" = true;
 
       "window.titleBarStyle" = "custom";
+
+      # Disable auto check updates
+      "update.mode" = "none";
     };
   };
 }
