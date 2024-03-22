@@ -66,4 +66,6 @@
     pathsToLink = [ "/share/nix-direnv" ];
     etc.issue.text = (builtins.readFile ./issue.txt);
   };
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }
