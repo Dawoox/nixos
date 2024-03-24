@@ -92,6 +92,7 @@ in
       hyprpaper # Hyprland wallpaper utility
       termius # SSH Client
       etcher # IMG/ISO Flasher
+      pavucontrol # PulseAudio Volume Control
 
       # === Games ===
       stepmania # Pretty much a dance dance revolution for keyboard
