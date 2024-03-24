@@ -88,7 +88,6 @@ in
       zathura # Lightweight PDF reader
       nomacs # Image viewer
       obsidian # Note taking / global text editor
-      vivaldi # Web browser
       discord # Who doesn't know Discord?
       hyprpaper # Hyprland wallpaper utility
       termius # SSH Client
