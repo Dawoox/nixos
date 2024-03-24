@@ -4,7 +4,7 @@
     ./nixos
     ./nixos/graphical
     ./nixos/gaming
-    ./nixos/security
+    #./nixos/security
     ./nixos/users/dawoox.nix
     ./nixos/hardware-configuration.nix
     #./post_install_scripts/wakatime.nix
