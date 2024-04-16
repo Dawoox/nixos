@@ -175,7 +175,6 @@ in
           "bluetooth"
           "network"
           "battery"
-          "tray"
           "custom/power"
         ];
         pulseaudio = {
