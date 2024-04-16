@@ -15,7 +15,7 @@ in
     ./hyprland
     ./hyprpaper
     ./waybar
-    ./wakatime
+    #./wakatime
     ./nomacs
     ./git
     ./vim
