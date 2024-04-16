@@ -73,6 +73,7 @@ in
       lazygit # Git TUI Client
       nvtop-amd # GPU Monitoring
       unstable.btop # System Monitoring
+      xarchiver
 
       # === System Utilities ===
       gnome.gnome-disk-utility # Disk utility
