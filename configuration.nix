@@ -49,6 +49,8 @@
     };
   };
 
+  services.teamviewer.enable = true;
+
   # Enable PAM config (needed for swaylock)
   security.pam.services.swaylock = { };
 
