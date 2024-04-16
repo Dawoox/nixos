@@ -95,6 +95,9 @@ in
 
       # Disable auto check updates
       "update.mode" = "none";
+
+      # Use system platformio
+      "platformio-ide.useBuiltinPIOCore" = "false";
     };
   };
 }
