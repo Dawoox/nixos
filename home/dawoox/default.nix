@@ -78,6 +78,7 @@ in
       # === System Utilities ===
       gnome.gnome-disk-utility # Disk utility
       baobab # Disk usage analyzer
+      networkmanagerapplet # Network manager applet
 
       # === GUI/Desktop ===
       # Jetbrains C IDE
@@ -94,6 +95,7 @@ in
       termius # SSH Client
       etcher # IMG/ISO Flasher
       pavucontrol # PulseAudio Volume Control
+      cider # Apple Music Player
 
       # === Games ===
       stepmania # Pretty much a dance dance revolution for keyboard
