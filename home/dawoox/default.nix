@@ -62,6 +62,9 @@ in
       # Doesn't ask why, don't ask how, it just works
       gnome.gnome-keyring
 
+      pcsctools
+      libnfc
+
       # === Utils ===
       bat # Just like cat but in a vim buffer
       virt-manager # Virtual machine manager
