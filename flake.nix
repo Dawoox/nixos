@@ -8,6 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "github:hyprwm/Hyprland/v0.39.1";
     nixos-hardware.url = "github:dawoox/nixos-hardware/master";
 
     ida.url = "github:bbjubjub2494/nixpkgs/idafree";
@@ -34,6 +35,7 @@
 
       extraArgs = {
         ida = (import inputs.ida cfg).ida-free;
+        hyprland = inputs.hyprland.packages.${cfg.system};
         inherit pkgs;
       };
 

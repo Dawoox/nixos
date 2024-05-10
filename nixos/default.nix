@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, hyprland, ... }:
 {
   nix = {
     gc = {
@@ -45,7 +45,10 @@
   zramSwap.enable = true;
 
   programs = {
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      package = hyprland.hyprland;
+    };
     command-not-found.enable = true;
     zsh.enable = true;
     dconf.enable = true; # virt-manager requires dconf to save settings
