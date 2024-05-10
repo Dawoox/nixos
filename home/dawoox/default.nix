@@ -81,7 +81,7 @@ in
       gnome.gnome-disk-utility # Disk utility
       baobab # Disk usage analyzer
       networkmanagerapplet # Network manager applet
-      nwg-displays # Display manager
+      unstable.nwg-displays # Display manager
 
       # === GUI/Desktop ===
       # Jetbrains C IDE
