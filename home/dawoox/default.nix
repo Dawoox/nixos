@@ -55,8 +55,7 @@ in
       pamixer # Control audio
       hyprland-protocols # Needed for Hyprland
       wireguard-tools # Wireguard VPN
-      # temurin-jre-bin-17 # Java 17 JRE
-      jdk17 # Java 17 JDK
+      temurin-jre-bin-21 # Java 17 JRE
       lxde.lxsession # LXDE session manager
       # LXSession is here to do some magic with the polkit of gnome
       # Doesn't ask why, don't ask how, it just works
@@ -82,6 +81,7 @@ in
       gnome.gnome-disk-utility # Disk utility
       baobab # Disk usage analyzer
       networkmanagerapplet # Network manager applet
+      nwg-displays # Display manager
 
       # === GUI/Desktop ===
       # Jetbrains C IDE
@@ -89,6 +89,7 @@ in
       # Jetbrains Python IDE
       (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [ "github-copilot" ])
       unstable.jetbrains.rust-rover
+      jetbrains.idea-ultimate
       jetbrains.webstorm # Jetbrains Web IDE
       zathura # Lightweight PDF reader
       nomacs # Image viewer
@@ -99,6 +100,7 @@ in
       etcher # IMG/ISO Flasher
       pavucontrol # PulseAudio Volume Control
       cider # Apple Music Player
+      parsec-bin
 
       # === Games ===
       stepmania # Pretty much a dance dance revolution for keyboard
@@ -110,6 +112,7 @@ in
       # Temporary
       # Those packages way stop working at any time
       ida
+      unstable.nh
     ];
   };
 }
