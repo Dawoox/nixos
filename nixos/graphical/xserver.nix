@@ -17,6 +17,9 @@ in
         enable = true;
         theme = "${sddm_catppuccin}/src/catppuccin-macchiato";
       };
+      desktopManager.gnome = {
+        enable = true;
+      };
     };
   };
 }
