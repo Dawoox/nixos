@@ -3,12 +3,12 @@
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;
-      timeout = 2;
+      timeout = 5;
       grub = {
         enable = true;
         efiSupport = true;
         device = "nodev";
-        useOSProber = false;
+        useOSProber = true;
         extraConfig = ''
           GRUB_CMDLINE_LINUX="mem_sleep_default=deep"
         '';
