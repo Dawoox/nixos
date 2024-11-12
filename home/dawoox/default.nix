@@ -1,4 +1,4 @@
-{ pkgs, ida, ... }:
+{ pkgs, ida, config, ... }:
 let
   wofi_dracula = pkgs.fetchFromGitHub {
     owner = "dracula";
@@ -29,6 +29,10 @@ in
     ./gtk.nix
     ./qt.nix
     ./wofi.nix
+  ];
+
+  xdg.systemDirs.data = [
+    "/var/lib/flatpak/exports/bin"
   ];
 
   home = {
@@ -93,7 +97,7 @@ in
       jetbrains.webstorm # Jetbrains Web IDE
       zathura # Lightweight PDF reader
       nomacs # Image viewer
-      obsidian # Note taking / global text editor
+      #obsidian # Note taking / global text editor
       discord # Who doesn't know Discord?
       hyprpaper # Hyprland wallpaper utility
       termius # SSH Client

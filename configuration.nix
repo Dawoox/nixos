@@ -49,9 +49,8 @@
     };
   };
 
-  services.teamviewer.enable = true;
-
-  services.pcscd.enable = true;
+  # To prevent the time to go crazy when switching from NixOS to Windows in dualboot
+  time.hardwareClockInLocalTime = true;
 
   # Enable PAM config (needed for swaylock)
   security.pam.services.swaylock = { };

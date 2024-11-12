@@ -57,6 +57,13 @@
   services = {
     fwupd.enable = true;
     upower.enable = true;
+    pcscd.enable = true;
+    flatpak.enable = true;
+    mysql = {
+      enable = true;
+      package = pkgs.mariadb;
+    };
+
   };
 
   environment = {
