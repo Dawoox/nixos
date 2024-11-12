@@ -84,6 +84,7 @@ in
       # Themes
       "workbench.iconTheme" = "a-file-icon-vscode";
       "workbench.colorTheme" = "Palenight (Mild Contrast)";
+      "editor.fontSize" = 14;
 
       # File settings
       "files.autoSave" = "onFocusChange";

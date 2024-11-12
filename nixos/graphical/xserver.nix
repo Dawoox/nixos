@@ -11,12 +11,7 @@ in
   services = {
     xserver = {
       enable = true;
-      layout = "fr";
-      libinput.enable = true;
-      displayManager.sddm = {
-        enable = true;
-        theme = "${sddm_catppuccin}/src/catppuccin-macchiato";
-      };
+      xkb.layout = "fr";
       desktopManager.gnome = {
         enable = false;
       };

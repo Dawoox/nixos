@@ -35,6 +35,8 @@ in
     "/var/lib/flatpak/exports/bin"
   ];
 
+  services.poweralertd.enable = true;
+
   home = {
     pointerCursor.name = "Vanilla-DMZ";
     pointerCursor.package = pkgs.vanilla-dmz;
@@ -77,7 +79,7 @@ in
       man-pages # Who doesn't know these ?
       croc # P2P file transfer
       lazygit # Git TUI Client
-      nvtop-amd # GPU Monitoring
+      nvtopPackages.amd # GPU Monitoring
       unstable.btop # System Monitoring
       xarchiver
 
@@ -101,10 +103,10 @@ in
       discord # Who doesn't know Discord?
       hyprpaper # Hyprland wallpaper utility
       termius # SSH Client
-      etcher # IMG/ISO Flasher
       pavucontrol # PulseAudio Volume Control
       cider # Apple Music Player
       parsec-bin
+      unstable.orca-slicer
 
       # === Games ===
       stepmania # Pretty much a dance dance revolution for keyboard
@@ -114,9 +116,10 @@ in
       heroic # Multi-Brands Launcher
 
       # Temporary
-      # Those packages way stop working at any time
+      # Those packages may stop working at any time
       ida
       unstable.nh
+      #etcher # IMG/ISO Flasher
     ];
   };
 }

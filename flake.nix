@@ -1,15 +1,15 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs_unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland.url = "github:hyprwm/Hyprland/v0.39.1";
-    nixos-hardware.url = "github:dawoox/nixos-hardware/master";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     ida.url = "github:bbjubjub2494/nixpkgs/idafree";
   };
@@ -63,7 +63,7 @@
       nixosConfigurations."neutron" = inputs.nixpkgs.lib.nixosSystem (defaultConfig // {
         modules = defaultConfig.modules ++ [
           ./configuration.nix
-          hardware.framework-16-7940-amd
+          hardware.framework-16-7040-amd
         ];
       });
     };

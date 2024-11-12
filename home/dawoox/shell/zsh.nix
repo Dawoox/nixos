@@ -2,6 +2,9 @@
 {
   programs.zsh = {
     enable = true;
+    sessionVariables = {
+      FLAKE = "/home/dawoox/config";
+    };
     initExtra = ''
       eval "$(direnv hook zsh)"
     '';
@@ -13,7 +16,7 @@
       "lz" = "lazygit";
       "cs" = "nix run github:sigmapitech/cs";
     };
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     plugins = [
       # Need to be disable currently because its too
