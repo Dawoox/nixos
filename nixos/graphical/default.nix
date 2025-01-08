@@ -11,7 +11,6 @@
     font = "Lat2-Terminus16";
   };
 
-  sound.enable = true;
   hardware = {
     pulseaudio.enable = false;
     bluetooth.enable = true;

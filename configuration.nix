@@ -28,8 +28,6 @@
   # Configure console keymap
   console.keyMap = "fr";
 
-  # Enable sound system
-  sound.enable = true;
   security.rtkit.enable = true;
 
   virtualisation = {

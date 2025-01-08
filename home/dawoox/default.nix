@@ -65,7 +65,7 @@ in
       lxde.lxsession # LXDE session manager
       # LXSession is here to do some magic with the polkit of gnome
       # Doesn't ask why, don't ask how, it just works
-      gnome.gnome-keyring
+      gnome-keyring
 
       pcsctools
       libnfc
@@ -84,7 +84,7 @@ in
       xarchiver
 
       # === System Utilities ===
-      gnome.gnome-disk-utility # Disk utility
+      gnome-disk-utility # Disk utility
       baobab # Disk usage analyzer
       networkmanagerapplet # Network manager applet
       unstable.nwg-displays # Display manager
@@ -104,7 +104,7 @@ in
       hyprpaper # Hyprland wallpaper utility
       termius # SSH Client
       pavucontrol # PulseAudio Volume Control
-      cider # Apple Music Player
+      #cider # Apple Music Player
       parsec-bin
       unstable.orca-slicer
 
