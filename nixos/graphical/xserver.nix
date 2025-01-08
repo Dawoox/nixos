@@ -12,8 +12,9 @@ in
     xserver = {
       enable = true;
       xkb.layout = "fr";
+      videoDrivers = [ "amdgpu" ];
       desktopManager.gnome = {
-        enable = false;
+        enable = true;
       };
     };
   };
