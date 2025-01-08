@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland/v0.39.1";
+    hyprland.url = "github:hyprwm/Hyprland/v0.45.0";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     ida.url = "github:bbjubjub2494/nixpkgs/idafree";
