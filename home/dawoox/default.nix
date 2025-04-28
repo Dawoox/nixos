@@ -94,9 +94,6 @@ in
       unstable.nwg-displays # Display manager
 
       # === GUI/Desktop ===
-      # Jetbrains C IDE
-      
-      # Jetbrains Python IDE
       (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [ "github-copilot" ])
       (jetbrains.plugins.addPlugins jetbrains.clion [ "github-copilot" ])
       unstable.jetbrains.rust-rover
