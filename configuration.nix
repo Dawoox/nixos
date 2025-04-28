@@ -11,7 +11,7 @@
   ];
 
   networking.hostName = "neutron";
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
 
   # Don't wait for NetworkManager initialization to continue the rebuild
   # This prevent waiting the 60 timeout for NetworkManager
