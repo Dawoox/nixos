@@ -1,2 +1,2 @@
 #!/usr/bin/env zsh
-swaylock -i "~/assets/lock.jpg" -e
+swaylock -i "~/assets/lock.jpg"
