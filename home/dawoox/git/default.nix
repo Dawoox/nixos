@@ -9,6 +9,7 @@
     lfs.enable = true;
     extraConfig = {
       init.defaultBranch = "main";
+      pull.rebase = "true";
       core.excludesFile = "~/.globalgitignore";
       push.autoSetupRemote = true;
       "url \"ssh://git@github.com/\"".insteadOf = "https://github.com/";
