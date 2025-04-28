@@ -100,7 +100,7 @@ in
       zathura # Lightweight PDF reader
       nomacs # Image viewer
       #obsidian # Note taking / global text editor
-      discord # Who doesn't know Discord?
+      vesktop # Discord third-party client, fix screenshare
       hyprpaper # Hyprland wallpaper utility
       termius # SSH Client
       pavucontrol # PulseAudio Volume Control
