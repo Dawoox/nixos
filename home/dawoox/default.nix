@@ -94,6 +94,7 @@ in
       unstable.nwg-displays # Display manager
 
       # === GUI/Desktop ===
+      postman
       (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [ "github-copilot" ])
       (jetbrains.plugins.addPlugins jetbrains.clion [ "github-copilot" ])
       unstable.jetbrains.rust-rover
@@ -122,6 +123,7 @@ in
       ida
       unstable.nh
       #etcher # IMG/ISO Flasher
+      unityhub
     ];
   };
 }
