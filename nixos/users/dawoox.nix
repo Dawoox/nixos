@@ -8,6 +8,6 @@
     initialPassword = "hello";
     shell = pkgs.zsh;
     createHome = true;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "docker" "dialout" ];
   };
 }
