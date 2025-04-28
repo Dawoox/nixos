@@ -67,6 +67,7 @@ in
       # LXSession is here to do some magic with the polkit of gnome
       # Doesn't ask why, don't ask how, it just works
       gnome-keyring
+      apfs-fuse # Support for Apple File System
 
       pcsctools
       libnfc
