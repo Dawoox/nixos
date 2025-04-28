@@ -50,6 +50,7 @@ in
     };
 
     packages = with pkgs; [
+      audacity
       # === System ===
       wget # Download utility
       git # Version control
@@ -82,6 +83,8 @@ in
       nvtopPackages.amd # GPU Monitoring
       unstable.btop # System Monitoring
       xarchiver
+      unar # Better archiver/unarchiver
+      nixd
 
       # === System Utilities ===
       gnome-disk-utility # Disk utility
@@ -91,9 +94,10 @@ in
 
       # === GUI/Desktop ===
       # Jetbrains C IDE
-      (jetbrains.plugins.addPlugins jetbrains.clion [ "github-copilot" ])
+      
       # Jetbrains Python IDE
       (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [ "github-copilot" ])
+      (jetbrains.plugins.addPlugins jetbrains.clion [ "github-copilot" ])
       unstable.jetbrains.rust-rover
       jetbrains.idea-ultimate
       jetbrains.webstorm # Jetbrains Web IDE
