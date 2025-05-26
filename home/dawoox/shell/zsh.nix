@@ -7,11 +7,10 @@
     };
     initExtra = ''
       eval "$(direnv hook zsh)"
+      path+=$HOME/scripts/public
     '';
     shellAliases = {
-      "lock" = "~/scripts/lock_custom.sh";
       "epidock" = "sudo docker run -it --rm -v $(pwd):/home/project -w /home/project epitechcontent/epitest-docker:latest /bin/bash";
-      "waybar-reload" = "~/waybar_reload.sh";
       "obsidian" = "obsidian --disable-gpu";
       "lz" = "lazygit";
       "cs" = "nix run github:sigmapitech/cs";
