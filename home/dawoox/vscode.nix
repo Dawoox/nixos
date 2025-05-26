@@ -70,35 +70,37 @@ in
     enable = true;
     package = pkgs.unstable.vscode;
     mutableExtensionsDir = true;
-    extensions = with pkgs.vscode-extensions; [
-      #copilot
-      #copilot-chat
-      palenight-theme
-      material-icons
-      nix-plugins
-      nix-ide
-      nix-env-selector
-      direnv
-    ];
-    userSettings = {
-      # Themes
-      "workbench.iconTheme" = "a-file-icon-vscode";
-      "workbench.colorTheme" = "Palenight (Mild Contrast)";
-      "editor.fontSize" = 14;
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        #copilot
+        #copilot-chat
+        palenight-theme
+        material-icons
+        nix-plugins
+        nix-ide
+        nix-env-selector
+        direnv
+      ];
+      userSettings = {
+        # Themes
+        "workbench.iconTheme" = "a-file-icon-vscode";
+        "workbench.colorTheme" = "Palenight (Mild Contrast)";
+        "editor.fontSize" = 14;
 
-      # File settings
-      "files.autoSave" = "onFocusChange";
+        # File settings
+        "files.autoSave" = "onFocusChange";
 
-      # Git / Github
-      "git.autofetch" = true;
+        # Git / Github
+        "git.autofetch" = true;
 
-      "window.titleBarStyle" = "custom";
+        "window.titleBarStyle" = "custom";
 
-      # Disable auto check updates
-      "update.mode" = "none";
+        # Disable auto check updates
+        "update.mode" = "none";
 
-      # Use system platformio
-      "platformio-ide.useBuiltinPIOCore" = "false";
+        # Use system platformio
+        "platformio-ide.useBuiltinPIOCore" = "false";
+      };
     };
   };
 }

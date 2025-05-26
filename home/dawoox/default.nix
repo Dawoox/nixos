@@ -97,9 +97,9 @@ in
 
       # === GUI/Desktop ===
       postman
-      (jetbrains.plugins.addPlugins jetbrains.pycharm-professional [ "github-copilot" ])
-      (jetbrains.plugins.addPlugins jetbrains.clion [ "github-copilot" ])
-      unstable.jetbrains.rust-rover
+      jetbrains.pycharm-professional
+      jetbrains.clion
+      jetbrains.rust-rover
       jetbrains.idea-ultimate
       jetbrains.webstorm # Jetbrains Web IDE
       zathura # Lightweight PDF reader

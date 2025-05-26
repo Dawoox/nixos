@@ -84,7 +84,7 @@ in
       git
       tree
       vim
-      (callPackage ./cider-v2.nix pkgs)
+      #(callPackage ./cider-v2.nix pkgs)
     ];
     pathsToLink = [ "/share/nix-direnv" ];
     etc.issue.text = (builtins.readFile ./issue.txt);

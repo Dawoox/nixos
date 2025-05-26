@@ -1,14 +1,18 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs_unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland/v0.45.0";
+    hyprland = {
+      url = "github:hyprwm/Hyprland/v0.48.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     ida.url = "github:bbjubjub2494/nixpkgs/idafree";

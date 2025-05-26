@@ -5,7 +5,7 @@
     sessionVariables = {
       FLAKE = "/home/dawoox/config";
     };
-    initExtra = ''
+    initContent = ''
       eval "$(direnv hook zsh)"
       path+=$HOME/scripts/public
     '';

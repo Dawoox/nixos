@@ -2,7 +2,9 @@
 {
   services.mako = {
     enable = true;
-    anchor = "top-right";
-    defaultTimeout = 3000;
+    settings = {
+      anchor = "top-right";
+      defaultTimeout = 3000;
+    };
   };
 }
