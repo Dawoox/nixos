@@ -19,6 +19,7 @@ in
     ./nomacs
     ./git
     ./vim
+    ./helix
     ./bluetooth
     ./vscode.nix
     ./mako.nix
@@ -29,6 +30,7 @@ in
     ./gtk.nix
     ./qt.nix
     ./wofi.nix
+
   ];
 
   xdg.systemDirs.data = [
