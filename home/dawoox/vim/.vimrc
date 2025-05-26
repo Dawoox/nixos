@@ -40,7 +40,7 @@ endif
 set noswapfile
 
 " Colors
-syntax off
+syntax on
 colorscheme pablo
 hi Normal guibg=NONE ctermbg=NONE
 
