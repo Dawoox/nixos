@@ -14,6 +14,7 @@
       "obsidian" = "obsidian --disable-gpu";
       "lz" = "lazygit";
       "cs" = "nix run github:sigmapitech/cs";
+      "ssh" = "kitty +kitten ssh";
     };
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
