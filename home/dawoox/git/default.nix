@@ -9,7 +9,7 @@
     lfs.enable = true;
     signing = {
       key = "07E03A064DC6EEA7";
-      signByDefault = true;
+      signByDefault = false;
     };
     extraConfig = {
       init.defaultBranch = "main";
