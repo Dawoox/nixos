@@ -9,5 +9,9 @@
     nil # Nix LSP
     yaml-language-server # YAML LSP
     python312Packages.python-lsp-server # Python LSP
+    ruff
+    python312Packages.python-lsp-ruff
+    python312Packages.python-lsp-black
+    lua-language-server
   ];
 }
