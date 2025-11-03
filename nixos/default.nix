@@ -76,6 +76,7 @@ in
       enable = true;
       theme = "${sddm_catppuccin}/src/catppuccin-macchiato";
     };
+    tailscale.enable = true;
   };
 
   environment = {

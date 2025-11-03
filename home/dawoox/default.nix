@@ -86,7 +86,6 @@ in
       xarchiver
       unar # Better archiver/unarchiver
       nixd
-      tailscale
 
       # === System Utilities ===
       gnome-disk-utility # Disk utility
