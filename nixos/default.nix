@@ -66,12 +66,7 @@ in
     libinput.enable = true;
     fwupd.enable = true;
     upower.enable = true;
-    pcscd.enable = true;
     flatpak.enable = true;
-    mysql = {
-      enable = true;
-      package = pkgs.mariadb;
-    };
     displayManager.sddm = {
       enable = true;
       theme = "${sddm_catppuccin}/src/catppuccin-macchiato";
