@@ -70,9 +70,7 @@ in
       # Doesn't ask why, don't ask how, it just works
       gnome-keyring
       apfs-fuse # Support for Apple File System
-
-      pcsctools
-      libnfc
+      swtpm # TPM emulator for qemu vm
 
       # === Utils ===
       bat # Just like cat but in a vim buffer
@@ -88,6 +86,7 @@ in
       xarchiver
       unar # Better archiver/unarchiver
       nixd
+      tailscale
 
       # === System Utilities ===
       gnome-disk-utility # Disk utility
@@ -100,7 +99,8 @@ in
       jetbrains.pycharm-professional
       jetbrains.clion
       jetbrains.rust-rover
-      jetbrains.idea-ultimate
+      jetbrains.goland
+      jetbrains.datagrip
       jetbrains.webstorm # Jetbrains Web IDE
       zathura # Lightweight PDF reader
       nomacs # Image viewer
@@ -109,9 +109,9 @@ in
       hyprpaper # Hyprland wallpaper utility
       termius # SSH Client
       pavucontrol # PulseAudio Volume Control
-      #cider # Apple Music Player
       parsec-bin
       unstable.orca-slicer
+      chromium
 
       # === Games ===
       stepmania # Pretty much a dance dance revolution for keyboard
@@ -122,10 +122,8 @@ in
 
       # Temporary
       # Those packages may stop working at any time
-      ida
+      #ida
       unstable.nh
-      #etcher # IMG/ISO Flasher
-      unityhub
     ];
   };
 }
