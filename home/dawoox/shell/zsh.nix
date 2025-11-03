@@ -3,7 +3,7 @@
   programs.zsh = {
     enable = true;
     sessionVariables = {
-      FLAKE = "/home/dawoox/config";
+      NH_FLAKE = "/home/dawoox/config";
     };
     initContent = ''
       eval "$(direnv hook zsh)"
