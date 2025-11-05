@@ -82,7 +82,7 @@ in
       croc # P2P file transfer
       lazygit # Git TUI Client
       nvtopPackages.amd # GPU Monitoring
-      unstable.btop # System Monitoring
+      btop # System Monitoring
       xarchiver
       unar # Better archiver/unarchiver
       nixd
@@ -91,7 +91,8 @@ in
       gnome-disk-utility # Disk utility
       baobab # Disk usage analyzer
       networkmanagerapplet # Network manager applet
-      unstable.nwg-displays # Display manager
+      nwg-displays # Display 
+      nh
 
       # === GUI/Desktop ===
       postman
@@ -122,7 +123,6 @@ in
       # Temporary
       # Those packages may stop working at any time
       #ida
-      unstable.nh
     ];
   };
 }
