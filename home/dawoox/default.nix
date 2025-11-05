@@ -8,6 +8,7 @@ let
     #sha256 = pkgs.lib.fakeSha256;
   };
   username = "dawoox";
+  onePassPath = "~/.1password/agent.sock";
 in
 {
   imports = [
@@ -127,5 +128,13 @@ in
       _1password-cli
       trashy
     ];
+  };
+
+  programs.ssh = {
+    enable = true;
+    extraConfig = ''
+      Host *
+          IdentityAgent ${onePassPath}
+    '';
   };
 }
