@@ -123,6 +123,8 @@ in
       # Temporary
       # Those packages may stop working at any time
       #ida
+      _1password-gui
+      _1password-cli
     ];
   };
 }
