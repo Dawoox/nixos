@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, unstable, ... }:
 {
   programs = {
     steam = {
-      package = pkgs.unstable.steam;
+      package = unstable.steam;
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;

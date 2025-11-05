@@ -1,4 +1,4 @@
-{ pkgs, ida, config, ... }:
+{ pkgs, ida, config, unstable, ... }:
 let
   wofi_dracula = pkgs.fetchFromGitHub {
     owner = "dracula";

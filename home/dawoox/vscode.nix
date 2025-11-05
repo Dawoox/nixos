@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, unstable, ... }:
 let
   palenight-theme = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
@@ -68,7 +68,7 @@ in
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.unstable.vscode;
+    package = unstable.vscode;
     mutableExtensionsDir = true;
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [

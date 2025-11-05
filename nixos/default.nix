@@ -25,13 +25,6 @@ in
 
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [
-      (self: super: {
-        nix-direnv = super.nix-direnv.override {
-          enableFlakes = true;
-        };
-      })
-    ];
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

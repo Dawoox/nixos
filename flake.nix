@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs_unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -31,16 +31,20 @@
         };
       };
 
-      pkgs = import inputs.nixpkgs (cfg // {
-        overlays = [
-          (_: _: { unstable = import inputs.nixpkgs_unstable cfg; })
-        ];
-      });
+      pkgs = import inputs.nixpkgs {
+        system = cfg.system;
+        config = cfg.config;
+      };
+
+      unstable = import inputs.nixpkgs-unstable {
+        system = cfg.system;
+        config = cfg.config;
+      };
 
       extraArgs = {
         ida = (import inputs.ida cfg).ida-free;
         hyprland = inputs.hyprland.packages.${cfg.system};
-        inherit pkgs;
+        inherit unstable;
       };
 
       hardware = inputs.nixos-hardware.nixosModules;
@@ -60,12 +64,14 @@
       homeConfigurations = {
         "dawoox" = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          extraSpecialArgs = extraArgs;
           modules = [ ./home/dawoox ];
         };
       };
 
       nixosConfigurations."neutron" = inputs.nixpkgs.lib.nixosSystem (defaultConfig // {
         modules = defaultConfig.modules ++ [
+          { nixpkgs.config = cfg.config; }
           ./configuration.nix
           hardware.framework-16-7040-amd
         ];

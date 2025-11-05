@@ -1,8 +1,8 @@
-{ configs, pkgs, ... }:
+{ configs, pkgs, unstable, ... }:
 {
   programs.wofi = {
     enable = true;
-    package = pkgs.unstable.wofi;
+    package = unstable.wofi;
     settings = {
       allow_images = true;
       insensitive = true;
