@@ -125,6 +125,7 @@ in
       #ida
       _1password-gui
       _1password-cli
+      trashy
     ];
   };
 }
