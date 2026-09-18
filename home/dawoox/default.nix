@@ -96,13 +96,13 @@ in
       nh
 
       # === GUI/Desktop ===
-      postman
-      jetbrains.pycharm-professional
-      jetbrains.clion
-      jetbrains.rust-rover
-      jetbrains.goland
-      jetbrains.datagrip
-      jetbrains.webstorm # Jetbrains Web IDE
+      #postman
+      #jetbrains.pycharm-professional
+      #jetbrains.clion
+      #jetbrains.rust-rover
+      #jetbrains.goland
+      #jetbrains.datagrip
+      #jetbrains.webstorm # Jetbrains Web IDE
       zathura # Lightweight PDF reader
       nomacs # Image viewer
       #obsidian # Note taking / global text editor
