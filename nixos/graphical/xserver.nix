@@ -13,9 +13,6 @@ in
       enable = true;
       xkb.layout = "fr";
       videoDrivers = [ "amdgpu" ];
-      desktopManager.gnome = {
-        enable = true;
-      };
     };
   };
 }

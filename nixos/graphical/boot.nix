@@ -4,6 +4,11 @@
     loader = {
       efi.canTouchEfiVariables = true;
       timeout = 5;
+      #limine = {
+      #  enable = true;
+      #  secureBoot.enable = false;
+      #  maxGenerations = 5;
+      #};
       grub = {
         enable = true;
         efiSupport = true;

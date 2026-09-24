@@ -1,21 +1,14 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprland = {
-      url = "github:hyprwm/Hyprland/v0.48.0";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    ida.url = "github:bbjubjub2494/nixpkgs/idafree";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -42,8 +35,6 @@
       };
 
       extraArgs = {
-        ida = (import inputs.ida cfg).ida-free;
-        hyprland = inputs.hyprland.packages.${cfg.system};
         inherit unstable;
       };
 

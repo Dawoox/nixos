@@ -1,13 +1,9 @@
 { pkgs, hyprland, ... }:
-let
-  sddm_catppuccin = pkgs.fetchFromGitHub {
-    owner = "catppuccin";
-    repo = "sddm";
-    rev = "7fc67d1027cdb7f4d833c5d23a8c34a0029b0661";
-    hash = "sha256-SjYwyUvvx/ageqVH5MmYmHNRKNvvnF3DYMJ/f2/L+Go=";
-  };
-in
 {
+  imports = [
+    ./cosmic-power-mode.nix
+  ];
+
   nix = {
     gc = {
       automatic = true;
@@ -29,7 +25,7 @@ in
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  time.timeZone = "Europe/Paris";
+  time.timeZone = "America/Vancouver"; # Europe/Paris
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "fr_FR.UTF-8";
@@ -46,10 +42,6 @@ in
   zramSwap.enable = true;
 
   programs = {
-    hyprland = {
-      enable = true;
-      package = hyprland.hyprland;
-    };
     command-not-found.enable = true;
     zsh.enable = true;
     dconf.enable = true; # virt-manager requires dconf to save settings
@@ -60,20 +52,17 @@ in
     fwupd.enable = true;
     upower.enable = true;
     flatpak.enable = true;
-    displayManager.sddm = {
-      enable = true;
-      theme = "${sddm_catppuccin}/src/catppuccin-macchiato";
-    };
     tailscale.enable = true;
+    desktopManager.cosmic.enable = true;
+    displayManager.cosmic-greeter.enable = true;
+    lact.enable = true;
   };
 
   environment = {
     shells = with pkgs; [ zsh ];
     systemPackages = with pkgs; [
       git
-      tree
       vim
-      #(callPackage ./cider-v2.nix pkgs)
     ];
     pathsToLink = [ "/share/nix-direnv" ];
     etc.issue.text = (builtins.readFile ./issue.txt);
