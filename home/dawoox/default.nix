@@ -24,8 +24,6 @@ in
   gtk.gtk4.theme = config.gtk.theme;
 
   home = {
-    pointerCursor.name = "Vanilla-DMZ";
-    pointerCursor.package = pkgs.vanilla-dmz;
     stateVersion = "26.05";
 
     file = {
