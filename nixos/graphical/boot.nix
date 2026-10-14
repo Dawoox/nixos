@@ -14,9 +14,6 @@
         efiSupport = true;
         device = "nodev";
         useOSProber = true;
-        extraConfig = ''
-          GRUB_CMDLINE_LINUX="mem_sleep_default=deep"
-        '';
       };
     };
     plymouth.enable = true;
