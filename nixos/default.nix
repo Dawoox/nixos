@@ -1,9 +1,5 @@
 { pkgs, hyprland, ... }:
 {
-  imports = [
-    ./cosmic-power-mode.nix
-  ];
-
   nix = {
     gc = {
       automatic = true;
