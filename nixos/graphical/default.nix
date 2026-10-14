@@ -15,32 +15,13 @@
     bluetooth.enable = true;
   };
 
-  programs = {
-    # xfconf.enable = true; # thunar requires xfconf to save settings
-    #thunar = {
-    #  enable = true;
-    #  plugins = with pkgs.xfce; [
-    #    thunar-archive-plugin
-    #    thunar-volman
-    #  ];
-    #};
-  };
-
   services = {
-    pulseaudio.enable = false;
-    # gvfs.enable = true; # Support for exotics fs, mount, thunar trash
-    # tumbler.enable = true; # Thumbnail support for thunar
-
-    # Enable pipewire
     pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-
-    # Enable the blueman bluetooth manager
-    # blueman.enable = true;
 
     printing.enable = true;
   };
