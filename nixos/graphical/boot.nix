@@ -3,7 +3,7 @@
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;
-      timeout = 5;
+      timeout = 1;
       #limine = {
       #  enable = true;
       #  secureBoot.enable = false;
