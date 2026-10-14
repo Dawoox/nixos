@@ -1,13 +1,13 @@
 { pkgs, ida, config, unstable, ... }:
 let
   username = "dawoox";
-  onePassPath = "~/.1password/agent.sock";
 in
 {
   imports = [
     ./shell
     ./git
     ./vim
+    ./ssh.nix
     ./vscode.nix
     ./direnv.nix
     ./kitty.nix
@@ -62,6 +62,7 @@ in
       jetbrains.clion
       jetbrains.rust-rover
       jetbrains.goland
+      jetbrains.idea
       #jetbrains.datagrip
       #jetbrains.webstorm
       obsidian # Note taking / global text editor
@@ -79,13 +80,5 @@ in
       prismlauncher
       onlyoffice-desktopeditors
     ];
-  };
-
-  programs.ssh = {
-    enable = true;
-    extraConfig = ''
-      Host *
-          IdentityAgent ${onePassPath}
-    '';
   };
 }
