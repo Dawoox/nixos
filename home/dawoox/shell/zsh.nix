@@ -11,7 +11,6 @@
     '';
     shellAliases = {
       "epidock" = "sudo docker run -it --rm -v $(pwd):/home/project -w /home/project epitechcontent/epitest-docker:latest /bin/bash";
-      "obsidian" = "obsidian --disable-gpu";
       "lz" = "lazygit";
       "cs" = "nix run github:sigmapitech/cs";
       "ssh" = "kitty +kitten ssh";

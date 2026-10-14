@@ -38,7 +38,6 @@
   zramSwap.enable = true;
 
   programs = {
-    command-not-found.enable = true;
     zsh.enable = true;
     dconf.enable = true; # virt-manager requires dconf to save settings
   };

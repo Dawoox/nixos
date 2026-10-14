@@ -62,7 +62,6 @@ in
       jetbrains.clion
       jetbrains.rust-rover
       jetbrains.goland
-      jetbrains.idea
       #jetbrains.datagrip
       #jetbrains.webstorm
       obsidian # Note taking / global text editor
@@ -76,7 +75,7 @@ in
 
       # Temporary
       # Those packages may stop working at any time
-      trashy
+      #trashy
       prismlauncher
       onlyoffice-desktopeditors
     ];

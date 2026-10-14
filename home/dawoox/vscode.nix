@@ -32,36 +32,12 @@ let
       sha256 = "sha256-jwOM+6LnHyCkvhOTVSTUZvgx77jAg6hFCCpBqY8AxIg=";
     };
   };
-  nix-env-selector = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-    mktplcRef = {
-      name = "nix-env-selector";
-      publisher = "arrterian";
-      version = "1.0.10";
-      sha256 = "sha256-b3Sr0bwU2VJgl2qcdsUROZ3jnK+YUuzJMySvSD7goj8=";
-    };
-  };
   direnv = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
     mktplcRef = {
       name = "direnv";
       publisher = "mkhl";
       version = "0.16.0";
       sha256 = "sha256-u2AFjvhm3zio1ygW9yD9ZwbywLrEssd0O7/0AtfCvMo=";
-    };
-  };
-  copilot = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-    mktplcRef = {
-      name = "copilot";
-      publisher = "github";
-      version = "1.152.0";
-      sha256 = "sha256-+bwEJQI6wrouEfaqmkIG4Ao01a069cY95satwA7TsVs=";
-    };
-  };
-  copilot-chat = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-    mktplcRef = {
-      name = "copilot-chat";
-      publisher = "github";
-      version = "0.10.2";
-      sha256 = "sha256-NfVg0Mor6agPrPYuzsNiWgX5DAcSysWaP3GilyXv/S4=";
     };
   };
 in
@@ -72,13 +48,10 @@ in
     mutableExtensionsDir = true;
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
-        #copilot
-        #copilot-chat
         palenight-theme
         material-icons
         nix-plugins
         nix-ide
-        nix-env-selector
         direnv
       ];
       userSettings = {
