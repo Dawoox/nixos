@@ -2,7 +2,7 @@
 {
   programs = {
     steam = {
-      package = unstable.steam;
+      #package = unstable.steam;
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
