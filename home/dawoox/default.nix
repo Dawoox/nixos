@@ -69,12 +69,11 @@ in
       unstable.orca-slicer
       cider-2
       _1password-gui
-
+      prismlauncher
 
       # Temporary
       # Those packages may stop working at any time
       #trashy
-      prismlauncher
       onlyoffice-desktopeditors
     ];
   };
