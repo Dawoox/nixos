@@ -72,7 +72,10 @@ in
         "update.mode" = "none";
 
         # Use system platformio
-        "platformio-ide.useBuiltinPIOCore" = "false";
+        #"platformio-ide.useBuiltinPIOCore" = "false";
+
+        # Open as read-only files marked as such by the filesystem
+        "files.readonlyFromPermissions" = "true";
       };
     };
   };
