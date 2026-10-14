@@ -26,7 +26,7 @@ in
   home = {
     pointerCursor.name = "Vanilla-DMZ";
     pointerCursor.package = pkgs.vanilla-dmz;
-    stateVersion = "23.11";
+    stateVersion = "26.05";
 
     file = {
       "assets".source = ../../assets;
