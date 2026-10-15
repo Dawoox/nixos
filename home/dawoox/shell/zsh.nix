@@ -7,7 +7,6 @@
     };
     initContent = ''
       eval "$(direnv hook zsh)"
-      path+=$HOME/scripts/public
     '';
     shellAliases = {
       "epidock" = "sudo docker run -it --rm -v $(pwd):/home/project -w /home/project epitechcontent/epitest-docker:latest /bin/bash";

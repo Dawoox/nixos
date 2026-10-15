@@ -28,8 +28,6 @@ in
 
     file = {
       "assets".source = ../../assets;
-      "Templates".source = ../../templates;
-      "scripts".source = ../../scripts;
     };
 
     packages = with pkgs; [

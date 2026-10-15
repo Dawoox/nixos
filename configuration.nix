@@ -18,9 +18,6 @@
   # For example, having a bridge with a wireguard VPN connection in it
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  # Disable systemd-logind handling of the lid switch
-  #services.logind.settings.Login.HandleLidSwitch = "ignore";
-
   # Enable networking
   networking.networkmanager.enable = true;
 
