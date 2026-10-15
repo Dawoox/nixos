@@ -13,6 +13,7 @@
       "lz" = "lazygit";
       "cs" = "nix run github:sigmapitech/cs";
       "ssh" = "kitty +kitten ssh";
+      "tp" = "trashy put";
     };
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;

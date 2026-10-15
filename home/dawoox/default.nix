@@ -15,6 +15,8 @@ in
     ./exa.nix
     ./gtk.nix
     ./qt.nix
+    ./sops.nix
+    ./rclone.nix
   ];
 
   xdg.systemDirs.data = [
@@ -71,7 +73,7 @@ in
 
       # Temporary
       # Those packages may stop working at any time
-      #trashy
+      trashy
       onlyoffice-desktopeditors
     ];
   };
