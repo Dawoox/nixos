@@ -40,4 +40,6 @@
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 27016 ];
   networking.firewall.allowedUDPPorts = [ 27016 ];
+
+  boot.kernelModules = [ "ntsync" ];
 }
