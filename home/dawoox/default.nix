@@ -15,8 +15,6 @@ in
     ./exa.nix
     ./gtk.nix
     ./qt.nix
-    ./sops.nix
-    ./rclone.nix
   ];
 
   xdg.systemDirs.data = [
@@ -54,6 +52,8 @@ in
       # nixd
       nh
       _1password-cli
+      rclone
+      pi-coding-agent
 
       # === GUI/Desktop ===
       jetbrains.pycharm
@@ -61,7 +61,7 @@ in
       jetbrains.rust-rover
       jetbrains.goland
       #jetbrains.datagrip
-      #jetbrains.webstorm
+      jetbrains.webstorm
       obsidian # Note taking / global text editor
       vesktop # Discord third-party client, fix screenshare
       termius # SSH Client
@@ -75,6 +75,7 @@ in
       # Those packages may stop working at any time
       trashy
       onlyoffice-desktopeditors
+      mongodb-compass
     ];
   };
 }
