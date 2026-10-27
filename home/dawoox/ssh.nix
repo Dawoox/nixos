@@ -30,6 +30,13 @@ in
         ProxyJump = "otter";
         WarnWeakCrypto = "false";
       };
+      "tuxworld" = {
+        HostName = "tuxworld.csci.viu.ca";
+        User = "bellanap";
+        ProxyJump = "otter";
+        DynamicForward = 27000;
+        WarnWeakCrypto = "false";
+      };
     };
   };
 }
