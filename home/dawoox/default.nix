@@ -78,4 +78,8 @@ in
       mongodb-compass
     ];
   };
+
+  services.arrpc = {
+    enable = true;
+  };
 }
