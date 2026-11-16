@@ -17,6 +17,8 @@
       #dynamic_background_opacity = "yes";
       window_padding_width = "0.0";
       remember_window_size = "no";
+      initial_window_width = "120c";
+      initial_window_height = "34c";
 
       # Tabs
       tab_bar_min_tabs = "2";
