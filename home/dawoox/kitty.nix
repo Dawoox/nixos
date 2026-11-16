@@ -5,7 +5,7 @@
     font = {
       package = pkgs.nerd-fonts.jetbrains-mono;
       name = "JetBrainsMono Nerd Font";
-      size = 14;
+      size = 12;
     };
     shellIntegration = {
       enableZshIntegration = true;
@@ -17,6 +17,8 @@
       #dynamic_background_opacity = "yes";
       window_padding_width = "0.0";
       remember_window_size = "no";
+      initial_window_width = "120c";
+      initial_window_height = "34c";
 
       # Tabs
       tab_bar_min_tabs = "2";
